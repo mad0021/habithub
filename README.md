@@ -1,204 +1,276 @@
-# HabitHub - Aplicación de Seguimiento de Hábitos
+# HabitHub - Aplicación de Gestión de Objetivos Mensuales
 
-[![CI](https://github.com/dennnisver4/HabitHub/actions/workflows/android-ci.yml/badge.svg)](https://github.com/dennnisver4/HabitHub/actions/workflows/android-ci.yml)
+[![CI](https://github.com/mad0021/habithub/actions/workflows/android-ci.yml/badge.svg)](https://github.com/mad0021/habithub/actions/workflows/android-ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Android](https://img.shields.io/badge/Android-26%2B-green.svg)](https://android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-blue.svg)](https://kotlinlang.org)
 
 ## 📱 Descripción
-HabitHub es una aplicación Android moderna para el seguimiento de hábitos personales y disciplina. Permite trackear rutinas diarias, visualizar tu progreso a través del tiempo y mantener la motivación con estadísticas detalladas.
+HabitHub es una aplicación Android moderna para la gestión de objetivos mensuales y notas diarias. Permite organizar tus metas, trackear tu progreso, añadir notas en el calendario y visualizar tus estadísticas con gráficos elegantes.
 
-## ✨ Características
+## ✨ Características Principales
 
-### 🏠 Pantalla Principal
-- **Calendario horizontal**: Navega fácilmente entre días para marcar tus hábitos
-- **Vista de hábitos**: Lista de todos tus hábitos activos
-- **Marcado rápido**: Checkbox para marcar hábitos como completados
-- **Personalización**: Cada hábito tiene su propio color e icono
+### 📅 Calendario Mensual (MonthlyCalendarScreen)
+- **Visualización mensual completa**: Calendario interactivo con todos los días del mes
+- **Notas diarias**: Añade y edita notas en cualquier día
+- **Navegación fluida**: Cambia entre meses fácilmente
+- **Interfaz intuitiva**: Diseño limpio y fácil de usar
 
-### ➕ Gestión de Hábitos
-- **Crear nuevos hábitos**: Añade hábitos con nombre, descripción, color e icono personalizados
-- **12 colores predefinidos**: Elige entre una paleta vibrante de colores
-- **24 iconos emoji**: Selecciona el icono perfecto para tu hábito
-- **Editar y eliminar**: Administra tus hábitos fácilmente
+### 🎯 Tabla de Objetivos (ObjectivesTableScreen)
+- **Gestión de objetivos mensuales**: Crea y organiza tus metas del mes
+- **Seguimiento de completado**: Marca objetivos como completados
+- **Estado visual**: Colores y estados claros para cada objetivo
+- **Edición rápida**: Modifica o elimina objetivos fácilmente
 
-### 📊 Estadísticas y Gráficos
-Visualiza tu progreso en diferentes periodos de tiempo:
-- **Semana**: Los últimos 7 días
-- **Mes**: Los últimos 30 días
-- **6 Meses**: Los últimos 6 meses
-- **Año**: El último año
-- **2 Años**: Los últimos 2 años
+### 📊 Gráficos de Progreso (ProgressChartScreen)
+- **Visualización de datos**: Gráficos elegantes con Vico Charts
+- **Estadísticas detalladas**: Porcentajes de completado y tendencias
+- **Análisis temporal**: Ve tu progreso a lo largo del tiempo
+- **Diseño Material3**: Gráficos modernos y animados
 
-Para cada hábito se muestra:
-- Días completados vs. días totales
-- Tasa de cumplimiento (%)
-- Barra de progreso visual
-- Gráfico de tendencia temporal
+### ⚙️ Configuración (SettingsScreen)
+- **Cambio de idioma**: Español e Inglés disponibles
+- **Tema OLED**: Modo claro y oscuro (optimizado para OLED)
+- **Preferencias persistentes**: Configuración guardada con DataStore
+- **Interfaz responsive**: Adaptable a diferentes tamaños de pantalla
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Stack Tecnológico
 
 ### Framework y Lenguaje
-- **Kotlin**: Lenguaje de programación moderno
-- **Jetpack Compose**: UI declarativa moderna
-- **Material Design 3**: Diseño actualizado y elegante
+
+- **Kotlin 2.0.21**: Lenguaje de programación moderno y seguro
+- **Jetpack Compose**: UI declarativa con Compose BOM 2024.12.01
+- **Material Design 3**: Material3 1.4.0-alpha03 con Adaptive y Material Icons
 
 ### Arquitectura
-- **MVVM** (Model-View-ViewModel)
-- **Room Database**: Persistencia de datos local
-- **Kotlin Flows**: Programación reactiva
-- **Coroutines**: Operaciones asíncronas
+
+- **MVVM** (Model-View-ViewModel) con Clean Architecture
+- **Hilt 2.46.1**: Inyección de dependencias de Dagger
+- **Room 2.6.0**: Persistencia de datos local con Flow
+- **Kotlin Coroutines**: Operaciones asíncronas
+- **DataStore 1.1.1**: Almacenamiento de preferencias
 
 ### Bibliotecas Principales
-- **AndroidX Navigation**: Navegación entre pantallas
-- **Room**: Base de datos SQLite con abstracción
-- **Vico Charts**: Gráficos elegantes y animados
-- **Lifecycle ViewModel**: Gestión del ciclo de vida
+
+- **Navigation Compose 2.8.5**: Navegación entre pantallas
+- **Vico Charts 1.13.1**: Gráficos elegantes y animados
+- **Coil 2.7.0**: Carga de imágenes y GIFs
+- **Lifecycle ViewModel 2.8.7**: Gestión del ciclo de vida
+- **AppCompat 1.7.0**: Soporte de localización
+
+### Herramientas de Calidad
+
+- **ktlint 12.1.2**: Análisis de estilo de código
+- **Detekt 1.23.7**: Análisis estático
+- **Dependency Updates 0.51.0**: Gestión de actualizaciones
+- **MockK 1.14.4**: Testing framework
 
 ## 📦 Estructura del Proyecto
 
-```
-app/src/main/java/com/dennnisver4/habithub/
-├── data/
-│   ├── model/
-│   │   ├── Habit.kt              # Modelo de datos de hábito
-│   │   ├── HabitEntry.kt         # Registro diario de hábito
-│   │   └── HabitWithEntries.kt   # Relación entre hábito y registros
-│   ├── dao/
-│   │   └── HabitDao.kt           # Operaciones de base de datos
-│   ├── database/
-│   │   └── HabitDatabase.kt      # Configuración de Room
-│   └── repository/
-│       └── HabitRepository.kt    # Capa de acceso a datos
-├── ui/
-│   ├── screens/
-│   │   ├── HomeScreen.kt         # Pantalla principal con calendario
-│   │   ├── AddHabitScreen.kt     # Pantalla para añadir hábitos
-│   │   └── StatisticsScreen.kt   # Pantalla de estadísticas
-│   ├── viewmodel/
-│   │   └── HabitViewModel.kt     # Lógica de negocio
-│   ├── theme/
-│   │   ├── Color.kt
-│   │   ├── Theme.kt
-│   │   └── Type.kt
-│   └── navigation/
-│       └── Screen.kt             # Rutas de navegación
-├── utils/
-│   └── DateUtils.kt              # Utilidades de fecha
-└── MainActivity.kt               # Actividad principal
+```kotlin
+HabitHub/
+├── app/src/main/java/com/dennnisver4/habithub/
+│   ├── data/                          # Capa de datos
+│   │   ├── DailyNote.kt              # Entity: Notas diarias
+│   │   ├── MonthlyObjective.kt       # Entity: Objetivos mensuales
+│   │   ├── ObjectiveCompletion.kt    # Entity: Completado de objetivos
+│   │   ├── HabitHubDao.kt           # DAO: Operaciones de BD
+│   │   ├── HabitHubDatabase.kt      # Room Database
+│   │   ├── ThemePreferences.kt       # DataStore: Preferencias
+│   │   └── repository/               # Repositorios
+│   │       ├── MonthlyCalendarRepository.kt
+│   │       ├── ObjectivesRepository.kt
+│   │       └── ProgressRepository.kt
+│   ├── di/                           # Inyección de dependencias
+│   │   └── AppModule.kt             # Módulo Hilt
+│   ├── ui/                           # Capa de presentación
+│   │   ├── screens/                  # Pantallas Compose
+│   │   │   ├── MonthlyCalendarScreen.kt
+│   │   │   ├── ObjectivesTableScreen.kt
+│   │   │   ├── ProgressChartScreen.kt
+│   │   │   └── SettingsScreen.kt
+│   │   ├── viewmodel/               # ViewModels
+│   │   │   ├── MonthlyCalendarViewModel.kt
+│   │   │   ├── ObjectivesViewModel.kt
+│   │   │   └── ProgressViewModel.kt
+│   │   ├── navigation/              # Navegación
+│   │   │   └── Screen.kt
+│   │   └── theme/                   # Tema Material3
+│   │       ├── Color.kt
+│   │       ├── Shape.kt
+│   │       ├── Theme.kt
+│   │       └── Type.kt
+│   ├── HabitHubApplication.kt       # @HiltAndroidApp
+│   ├── MainActivity.kt              # @AndroidEntryPoint
+│   └── SplashActivity.kt            # Pantalla de inicio
+├── app/src/main/res/
+│   ├── values/                      # Recursos español (default)
+│   │   ├── strings.xml
+│   │   ├── colors.xml
+│   │   └── themes.xml
+│   └── values-en/                   # Recursos inglés
+│       └── strings.xml
+├── .github/workflows/               # CI/CD
+│   ├── android-ci.yml              # Pipeline principal
+│   ├── release.yml                 # Releases automáticos
+│   ├── code-quality.yml            # Análisis de calidad
+│   └── dependabot-auto-merge.yml   # Auto-merge
+├── config/detekt/                   # Configuración Detekt
+│   ├── detekt.yml
+│   └── baseline.xml
+├── .editorconfig                    # Configuración editor
+├── CONTRIBUTING.md                  # Guía de contribución
+├── LICENSE                          # MIT License
+└── README.md                        # Este archivo
 ```
 
-## 🚀 Instalación y Compilación
+## 🚀 Requisitos y Configuración
 
-### Requisitos Previos
-- Android Studio Narwhal 4 Feature Drop | 2025.1.4 o superior
-- JDK 11 o superior
-- Android SDK 36
-- Gradle 8.13.0
+### Requisitos del Sistema
+
+- **Android Studio**: Ladybug 2024.2.1 o superior
+- **JDK**: 11 (local) / 17 (CI/CD)
+- **Android SDK**: 36
+- **Gradle**: 8.13.0
+- **AGP**: 8.13.0
+
+### Configuración del Proyecto
+
+- **Package**: `com.dennnisver4.habithub`
+- **minSdk**: 26 (Android 8.0 Oreo)
+- **targetSdk**: 36 (Android 14+)
+- **compileSdk**: 36
+- **versionCode**: 1
+- **versionName**: "1.0"
 
 ### Pasos de Instalación
 
-1. **Clonar o abrir el proyecto** en Android Studio
+1. **Clonar el repositorio**:
 
-2. **Sincronizar Gradle**:
-   - Android Studio sincronizará automáticamente las dependencias
-   - Si no lo hace, haz clic en `File` > `Sync Project with Gradle Files`
+   ```bash
+   git clone https://github.com/mad0021/habithub.git
+   cd habithub
+   ```
+
+2. **Abrir en Android Studio**:
+   - `File` > `Open` > Selecciona la carpeta del proyecto
+   - Espera a que Gradle sincronice automáticamente
 
 3. **Compilar el proyecto**:
-   - Haz clic en `Build` > `Make Project`
-   - O presiona `Ctrl + F9` (Windows/Linux) / `Cmd + F9` (Mac)
+
+   ```bash
+   ./gradlew assembleDebug
+   ```
+
+   O desde Android Studio: `Build` > `Make Project` (`Ctrl + F9`)
 
 4. **Ejecutar la aplicación**:
-   - Conecta un dispositivo Android o inicia un emulador
-   - Haz clic en el botón `Run` (▶️) o presiona `Shift + F10`
+   - Conecta un dispositivo Android (API 26+) o inicia un emulador
+   - `Run` > `Run 'app'` (`Shift + F10`)
 
-## 📱 Uso de la Aplicación
+## � Base de Datos
 
-### Añadir un Hábito
-1. Toca el botón flotante **+** en la pantalla principal
-2. Ingresa el nombre del hábito (obligatorio)
-3. Añade una descripción (opcional)
-4. Selecciona un color
-5. Elige un icono
-6. Toca **"Guardar Hábito"**
+HabitHub utiliza Room Database para almacenamiento local persistente.
 
-### Marcar un Hábito como Completado
-1. En la pantalla principal, navega al día deseado usando el calendario horizontal
-2. Toca el checkbox junto al hábito para marcarlo como completado
-3. El estado se guarda automáticamente
+### Esquema de Base de Datos
 
-### Ver Estadísticas
-1. Toca el icono de gráficos (📊) en la barra superior
-2. Selecciona el periodo de tiempo que deseas analizar
-3. Revisa las estadísticas de cada hábito:
-   - Días completados
-   - Tasa de cumplimiento
-   - Gráfico de tendencia
+**daily_notes**
 
-### Eliminar un Hábito
-1. Toca el icono de papelera (🗑️) junto al hábito
-2. Confirma la eliminación en el diálogo
-3. El hábito y todos sus registros se eliminarán permanentemente
+```sql
+CREATE TABLE daily_notes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT NOT NULL,
+    note TEXT NOT NULL
+);
+```
 
-## 🎨 Personalización
+**monthly_objectives**
 
-### Colores Disponibles
-La aplicación incluye 12 colores predefinidos:
-- Púrpura (#6200EE)
-- Turquesa (#03DAC5)
-- Rosa (#FF0266)
-- Naranja Profundo (#FF5722)
-- Verde (#4CAF50)
-- Azul (#2196F3)
-- Ámbar (#FFC107)
-- Morado (#9C27B0)
-- Rosa Intenso (#E91E63)
-- Cian (#00BCD4)
-- Verde Lima (#8BC34A)
-- Naranja (#FF9800)
+```sql
+CREATE TABLE monthly_objectives (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description TEXT,
+    month INTEGER NOT NULL,
+    year INTEGER NOT NULL,
+    created_at INTEGER NOT NULL
+);
+```
 
-### Iconos Disponibles
-24 emojis representativos:
-⭐ 💪 🏃 📚 🧘 💻 🎯 🔥 ✅ 🎨 🎵 🍎
-💤 🚴 🏋️ 🧠 📝 ⚡ 🌟 🎓 ☕ 🌱 🏆 💡
+**objective_completions**
 
-## 💾 Persistencia de Datos
+```sql
+CREATE TABLE objective_completions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    objective_id INTEGER NOT NULL,
+    date TEXT NOT NULL,
+    completed INTEGER NOT NULL,
+    FOREIGN KEY(objective_id) REFERENCES monthly_objectives(id) ON DELETE CASCADE
+);
+```
 
-Los datos se almacenan localmente en el dispositivo usando Room Database. Todos los hábitos y sus registros persisten entre sesiones de la aplicación.
+### Repositorios
 
-### Estructura de la Base de Datos
+- **MonthlyCalendarRepository**: Gestión de notas diarias en el calendario
+- **ObjectivesRepository**: CRUD de objetivos mensuales
+- **ProgressRepository**: Estadísticas y datos para gráficos
 
-**Tabla: habits**
-- `id`: Identificador único
-- `name`: Nombre del hábito
-- `description`: Descripción opcional
-- `color`: Color en formato hexadecimal
-- `icon`: Emoji del hábito
-- `createdAt`: Timestamp de creación
-- `isActive`: Estado del hábito
+## � Localización
 
-**Tabla: habit_entries**
-- `id`: Identificador único
-- `habitId`: Referencia al hábito
-- `date`: Fecha en formato yyyy-MM-dd
-- `completed`: Estado de completado
-- `notes`: Notas opcionales
+La aplicación soporta múltiples idiomas:
+
+- 🇪🇸 **Español** (por defecto)
+- 🇬🇧 **Inglés**
+
+El idioma se selecciona automáticamente según la configuración del sistema. Los usuarios pueden cambiarlo manualmente en la pantalla de Configuración.
+
+### Archivos de Localización
+
+- `res/values/strings.xml` - Español (60 strings)
+- `res/values-en/strings.xml` - Inglés (60 strings)
+- `res/xml/locales_config.xml` - Configuración de locales
+
+## 🎨 Temas
+
+### OLED Dark Theme
+
+HabitHub incluye un tema oscuro optimizado para pantallas OLED:
+
+- **Modo Claro**: Colores vibrantes con fondo blanco
+- **Modo Oscuro OLED**: Negro puro (#000000) para ahorro de batería
+
+Las preferencias de tema se guardan con DataStore y persisten entre sesiones.
 
 ## 🐛 Solución de Problemas
 
-### La aplicación no compila
-1. Verifica que tengas instalado JDK 11
-2. Sincroniza Gradle: `File` > `Sync Project with Gradle Files`
-3. Limpia el proyecto: `Build` > `Clean Project`
-4. Reconstruye: `Build` > `Rebuild Project`
+### Error de compilación Gradle
+
+```bash
+# Limpiar y reconstruir
+./gradlew clean
+./gradlew build --refresh-dependencies
+```
+
+### Error de Hilt
+
+Verifica que las anotaciones estén correctas:
+
+- `@HiltAndroidApp` en `HabitHubApplication`
+- `@AndroidEntryPoint` en `MainActivity` y `SplashActivity`
+- `@HiltViewModel` en todos los ViewModels
+- `@Inject` en constructores de repositorios
 
 ### Error de kapt
-1. Asegúrate de tener el plugin `kotlin-kapt` en `build.gradle.kts`
-2. Invalida cachés: `File` > `Invalidate Caches` > `Invalidate and Restart`
+
+```bash
+# Invalidar cachés en Android Studio
+File > Invalidate Caches > Invalidate and Restart
+```
 
 ### Los gráficos no se muestran
-1. Verifica que la biblioteca Vico esté correctamente importada
-2. Asegúrate de tener datos en el periodo seleccionado
+
+- Verifica que tengas datos en el rango de fechas seleccionado
+- Revisa que Vico Charts esté correctamente importado en `libs.versions.toml`
 
 ## � CI/CD y Workflows
 
@@ -333,6 +405,52 @@ feat(calendar): add swipe gesture to navigate months
 - Updated tests
 
 Closes #123
+```
+
+## 📊 Estado del Proyecto
+
+| Característica | Estado | Detalles |
+|----------------|--------|----------|
+| MVVM Architecture | ✅ **Completado** | 3 ViewModels con @HiltViewModel |
+| Hilt DI | ✅ **Completado** | Inyección de dependencias configurada |
+| Room Database | ✅ **Completado** | 3 entidades, 1 DAO, 3 repositorios |
+| Localization (ES/EN) | ✅ **Completado** | 60 strings en cada idioma |
+| OLED Dark Theme | ✅ **Completado** | Tema oscuro optimizado para OLED |
+| Material Design 3 | ✅ **Completado** | Material3 1.4.0-alpha03 |
+| CI/CD Pipeline | ✅ **Completado** | 4 workflows de GitHub Actions |
+| Code Quality Tools | ✅ **Completado** | ktlint, Detekt, Dependency Updates |
+| Splash Screen | ✅ **Completado** | SplashActivity con branding |
+| Navigation | ✅ **Completado** | Navigation Compose con 4 pantallas |
+| Unit Tests | 🚧 **Pendiente** | MockK configurado, tests por implementar |
+| Widget Home Screen | 🔜 **Futuro** | Planificado |
+| Cloud Sync | 🔜 **Futuro** | Planificado |
+| Notifications | 🔜 **Futuro** | Planificado |
+
+## 🎯 Roadmap
+
+### v1.1.0 (Próximo)
+
+- [ ] Tests unitarios para ViewModels (70%+ cobertura)
+- [ ] Tests de integración para Repositories
+- [ ] Tests UI para pantallas críticas
+- [ ] Documentación de arquitectura completa
+
+### v1.2.0 (Futuro)
+
+- [ ] Widget de inicio con objetivos del día
+- [ ] Notificaciones de recordatorio
+- [ ] Exportar/importar datos (JSON)
+- [ ] Racha de días consecutivos
+
+### v2.0.0 (Largo plazo)
+
+- [ ] Sincronización en la nube (Firebase)
+- [ ] Categorías de objetivos
+- [ ] Estadísticas avanzadas
+- [ ] Modo tablet con diseño adaptativo
+- [ ] Wear OS companion app
+
+## 📄 Licencia
 ```
 
 ## �🔮 Futuras Mejoras
