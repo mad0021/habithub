@@ -27,7 +27,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -50,7 +50,7 @@ detekt {
     allRules = false
     config.setFrom("$rootDir/config/detekt/detekt.yml")
     baseline = file("$rootDir/config/detekt/baseline.xml")
-    
+
     reports {
         html.required.set(true)
         xml.required.set(false)
@@ -71,28 +71,28 @@ dependencies {
     implementation(libs.androidx.compose.material3.adaptive)
     implementation(libs.androidx.compose.material.icons)
     implementation(libs.androidx.appcompat)
-    
+
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.compose.foundation)
     kapt(libs.androidx.room.compiler)
-    
+
     // Navigation
     implementation(libs.androidx.navigation.compose)
-    
+
     // ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    
+
     // Charts - Vico
     implementation(libs.vico.compose)
     implementation(libs.vico.compose.m3)
     implementation(libs.vico.core)
-    
+
     // Coil - Para cargar GIFs animados
     implementation(libs.coil.compose)
     implementation(libs.coil.gif)
-    
+
     // DataStore - Para preferencias de tema
     implementation(libs.androidx.datastore.preferences)
 
@@ -104,7 +104,7 @@ dependencies {
 
     // Testing - MockK
     testImplementation("io.mockk:mockk:1.14.4")
-    
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -35,9 +35,13 @@ class ObjectivesViewModel @Inject constructor(
     val currentYearMonth: StateFlow<YearMonth> = _currentYearMonth.asStateFlow()
     
     // String del mes en formato yyyy-MM para queries a la base de datos
-    private val yearMonthString: StateFlow<String> = currentYearMonth.map { 
+    private val yearMonthString: StateFlow<String> = currentYearMonth.map {
         it.format(DateTimeFormatter.ofPattern("yyyy-MM"))
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "")
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        "",
+    )
     
     /**
      * Lista de objetivos del mes actual
@@ -48,7 +52,11 @@ class ObjectivesViewModel @Inject constructor(
         } else {
             flowOf(emptyList())
         }
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        emptyList(),
+    )
     
     /**
      * Completaciones del día de hoy
@@ -57,7 +65,11 @@ class ObjectivesViewModel @Inject constructor(
         emit(LocalDate.now().toString())
     }.flatMapLatest { today ->
         repository.getDailyCompletions(today)
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        emptyList(),
+    )
     
     /**
      * Añade un nuevo objetivo al mes actual

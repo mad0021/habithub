@@ -43,7 +43,11 @@ class MonthlyCalendarViewModel @Inject constructor(
 
     private val yearMonthString: StateFlow<String> = currentYearMonth.map {
         it.format(DateTimeFormatter.ofPattern("yyyy-MM"))
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "")
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        "",
+    )
 
     // Notes
     fun getDailyNote(date: LocalDate): Flow<DailyNote?> = repository.getDailyNote(date.toString())
@@ -51,7 +55,11 @@ class MonthlyCalendarViewModel @Inject constructor(
     val monthlyNotes: StateFlow<List<DailyNote>> = yearMonthString.flatMapLatest { yearMonth ->
         if (yearMonth.isNotEmpty()) repository.getMonthlyNotes(yearMonth)
         else flowOf(emptyList())
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        emptyList(),
+    )
 
     fun saveDailyNote(date: LocalDate, note: String) {
         viewModelScope.launch {

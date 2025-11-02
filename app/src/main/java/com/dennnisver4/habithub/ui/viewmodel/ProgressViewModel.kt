@@ -32,9 +32,13 @@ class ProgressViewModel @Inject constructor(
     val currentYearMonth: StateFlow<YearMonth> = _currentYearMonth.asStateFlow()
     
     // String del mes en formato yyyy-MM para queries a la base de datos
-    private val yearMonthString: StateFlow<String> = currentYearMonth.map { 
+    private val yearMonthString: StateFlow<String> = currentYearMonth.map {
         it.format(DateTimeFormatter.ofPattern("yyyy-MM"))
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "")
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        "",
+    )
     
     /**
      * Lista de objetivos del mes actual
@@ -45,7 +49,11 @@ class ProgressViewModel @Inject constructor(
         } else {
             flowOf(emptyList())
         }
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        emptyList(),
+    )
     
     /**
      * Conteo diario de completaciones para el mes actual.
@@ -57,7 +65,11 @@ class ProgressViewModel @Inject constructor(
         } else {
             flowOf(emptyList())
         }
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        emptyList(),
+    )
     
     /**
      * Navega al mes anterior
