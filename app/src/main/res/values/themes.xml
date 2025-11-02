@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema base compatible con AppCompatActivity y Material3 -->
+    <style name="Theme.HabitHub" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Barras transparentes para apariencia edge-to-edge moderna -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- Edge-to-edge: contenido bajo las barras del sistema -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <!-- (Se eliminó el tema de splash; la app usará Theme.HabitHub directamente) -->
+</resources>

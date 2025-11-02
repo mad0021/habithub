@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales del gradiente -->
+    <color name="deep_blue">#FF0A1929</color>
+    <color name="dark_blue">#FF1A237E</color>
+    <color name="electric_blue">#FF2196F3</color>
+    <color name="cyan">#FF00BCD4</color>
+    <color name="teal">#FF009688</color>
+    <color name="green">#FF4CAF50</color>
+    
+    <!-- Colores claros -->
+    <color name="light_cyan">#FFB2EBF2</color>
+    <color name="light_teal">#FFB2DFDB</color>
+    <color name="light_green">#FFC8E6C9</color>
+    
+    <!-- Colores oscuros -->
+    <color name="dark_cyan">#FF006064</color>
+    <color name="dark_teal">#FF004D40</color>
+    <color name="dark_green">#FF1B5E20</color>
+    
+    <!-- Básicos -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema con colores dinámicos para Android 12+ (API 31+) - Material You -->
+    <!-- IMPORTANTE: Debe heredar de Theme.AppCompat para compatibilidad con AppCompatActivity -->
+    <style name="Theme.HabitHub" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Barras transparentes para apariencia edge-to-edge moderna -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- Edge-to-edge: contenido bajo las barras del sistema -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <!-- Desactivar contraste forzado para transparencia completa (Android 12+) -->
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+    </style>
+</resources>

@@ -1,0 +1,147 @@
+<resources>
+    <!-- App name -->
+    <string name="app_name">HabitHub</string>
+    
+    <!-- Splash Screen -->
+    <string name="splash_subtitle">Your daily goals companion</string>
+    
+    <!-- Home screen -->
+    <string name="home_title">HabitHub</string>
+    <string name="statistics_button">Statistics</string>
+    <string name="add_habit_button">New Habit</string>
+    <string name="today_button">Today</string>
+    <string name="go_to_today">Go to today</string>
+    
+    <!-- Calendar -->
+    <string name="month_year_format">MMMM yyyy</string>
+    <string name="date_separator"> </string>
+    
+    <!-- Habit card -->
+    <string name="delete_habit">Delete</string>
+    <string name="confirm_delete">Delete habit?</string>
+    <string name="delete_message">This action cannot be undone. All associated records will be deleted.</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="empty_habits_title">No habits</string>
+    <string name="empty_habits_message">Add your first habit using the + button</string>
+    
+    <!-- New habit screen -->
+    <string name="new_habit_title">New Habit</string>
+    <string name="back">Back</string>
+    <string name="habit_name_label">Habit name</string>
+    <string name="habit_name_hint">E.g: Exercise</string>
+    <string name="habit_description_label">Description (optional)</string>
+    <string name="habit_description_hint">Details about your habit</string>
+    <string name="color_label">Color</string>
+    <string name="icon_label">Icon</string>
+    <string name="save_habit">Save Habit</string>
+    
+    <!-- Colors -->
+    <string name="color_blue">Blue</string>
+    <string name="color_purple">Purple</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_red">Red</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_green">Green</string>
+    <string name="color_teal">Teal</string>
+    
+    <!-- Statistics -->
+    <string name="statistics_title">Statistics</string>
+    <string name="period_week">Week</string>
+    <string name="period_month">Month</string>
+    <string name="period_year">Year</string>
+    <string name="completed_days">Completed</string>
+    <string name="total_days">Total</string>
+    <string name="completion_rate">Rate</string>
+    <string name="current_streak">Current streak</string>
+    <string name="best_streak">Best streak</string>
+    <string name="days_suffix">days</string>
+    <string name="progress_label">Progress</string>
+    <string name="completion_trend">Completion trend</string>
+    <string name="empty_statistics_title">No data</string>
+    <string name="empty_statistics_message">Complete some habits to see your statistics</string>
+    
+    <!-- Days of the week (abbreviated) -->
+    <string name="day_monday_short">Mon</string>
+    <string name="day_tuesday_short">Tue</string>
+    <string name="day_wednesday_short">Wed</string>
+    <string name="day_thursday_short">Thu</string>
+    <string name="day_friday_short">Fri</string>
+    <string name="day_saturday_short">Sat</string>
+    <string name="day_sunday_short">Sun</string>
+    
+    <!-- Months -->
+    <string name="month_january">January</string>
+    <string name="month_february">February</string>
+    <string name="month_march">March</string>
+    <string name="month_april">April</string>
+    <string name="month_may">May</string>
+    <string name="month_june">June</string>
+    <string name="month_july">July</string>
+    <string name="month_august">August</string>
+    <string name="month_september">September</string>
+    <string name="month_october">October</string>
+    <string name="month_november">November</string>
+    <string name="month_december">December</string>
+    
+    <!-- Content descriptions -->
+    <string name="icon_description">Habit icon</string>
+    <string name="add_icon">Add</string>
+    <string name="chart_icon">Chart</string>
+    <string name="settings_icon">Settings</string>
+    <string name="delete_icon">Delete</string>
+    <string name="previous_month">Previous month</string>
+    <string name="next_month">Next month</string>
+    
+    <!-- Settings screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_button">Settings</string>
+    <string name="language_section">Language</string>
+    <string name="select_language">Select language</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_english">English</string>
+    <string name="language_system">System (default)</string>
+    <string name="app_info_section">Information</string>
+    <string name="app_version">App version</string>
+    <string name="theme_section">Appearance</string>
+    <string name="theme_mode">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System</string>
+    <string name="restart_required">Restart the app to apply changes</string>
+    <string name="habit_tracking">Habit Tracking</string>
+    <string name="feature_coming_soon">Feature coming soon</string>
+    <string name="ok">OK</string>
+    
+    <!-- Monthly Calendar -->
+    <string name="calendar_title">Calendar</string>
+    <string name="no_note">No note</string>
+    <string name="note_label">Daily note</string>
+    <string name="note_hint">How was your day?</string>
+    <string name="save">Save</string>
+    
+    <!-- Objectives Table -->
+    <string name="objectives_title">Objectives</string>
+    <string name="add_objective">Add objective</string>
+    <string name="objective_name">Objective name</string>
+    <string name="objective_hint">E.g: Read 50 pages</string>
+    <string name="add">Add</string>
+    <string name="no_objectives">No objectives</string>
+    <string name="no_objectives_hint">Add your monthly objectives using the + button</string>
+    <string name="delete_objective_title">Delete objective?</string>
+    <string name="delete_objective_message">This will delete \"%s\" and all completion marks</string>
+    
+    <!-- Progress Chart -->
+    <string name="chart_title">Progress</string>
+    <string name="daily_progress">Daily Progress</string>
+    <string name="objectives_completed">Objectives completed</string>
+    <string name="day_of_month">Day of month</string>
+    <string name="no_data_chart">No data</string>
+    <string name="no_data_chart_hint">Add objectives and mark them as completed to see your progress</string>
+    <string name="monthly_statistics">Monthly statistics</string>
+    <string name="total_objectives">Total objectives</string>
+    <string name="total_completions">Completed</string>
+    <string name="average_per_day">Average/day</string>
+    <string name="best_day">Best day</string>
+</resources>
