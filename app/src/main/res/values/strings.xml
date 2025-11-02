@@ -1,141 +1,49 @@
-    <resources>
+<resources>
     <!-- Nombre de la app -->
     <string name="app_name">HabitHub</string>
     
     <!-- Splash Screen -->
     <string name="splash_subtitle">Tu compañero de objetivos diarios</string>
+    <string name="habit_tracking">Seguimiento de hábitos</string>
     
-    <!-- Pantalla principal -->
-    <string name="home_title">HabitHub</string>
-    <string name="statistics_button">Estadísticas</string>
-    <string name="add_habit_button">Nuevo Hábito</string>
-    <string name="today_button">Hoy</string>
-    <string name="go_to_today">Ir a hoy</string>
-    
-    <!-- Calendario -->
-    <string name="month_year_format">MMMM yyyy</string>
+    <!-- General -->
     <string name="date_separator">de</string>
-    
-    <!-- Tarjeta de hábito -->
-    <string name="delete_habit">Eliminar</string>
-    <string name="confirm_delete">¿Eliminar hábito?</string>
-    <string name="delete_message">Esta acción no se puede deshacer. Se eliminarán todos los registros asociados.</string>
     <string name="cancel">Cancelar</string>
     <string name="delete">Eliminar</string>
-    <string name="empty_habits_title">No hay hábitos</string>
-    <string name="empty_habits_message">Añade tu primer hábito usando el botón +</string>
-    
-    <!-- Nueva pantalla de hábito -->
-    <string name="new_habit_title">Nuevo Hábito</string>
+    <string name="save">Guardar</string>
+    <string name="add">Añadir</string>
     <string name="back">Volver</string>
-    <string name="habit_name_label">Nombre del hábito</string>
-    <string name="habit_name_hint">Ej: Hacer ejercicio</string>
-    <string name="habit_description_label">Descripción (opcional)</string>
-    <string name="habit_description_hint">Detalles sobre tu hábito</string>
-    <string name="color_label">Color</string>
-    <string name="icon_label">Icono</string>
-    <string name="save_habit">Guardar Hábito</string>
     
-    <!-- Colores -->
-    <string name="color_blue">Azul</string>
-    <string name="color_purple">Morado</string>
-    <string name="color_pink">Rosa</string>
-    <string name="color_red">Rojo</string>
-    <string name="color_orange">Naranja</string>
-    <string name="color_yellow">Amarillo</string>
-    <string name="color_green">Verde</string>
-    <string name="color_teal">Turquesa</string>
-    
-    <!-- Estadísticas -->
-    <string name="statistics_title">Estadísticas</string>
-    <string name="period_week">Semana</string>
-    <string name="period_month">Mes</string>
-    <string name="period_year">Año</string>
-    <string name="completed_days">Completados</string>
-    <string name="total_days">Total</string>
-    <string name="completion_rate">Tasa</string>
-    <string name="current_streak">Racha actual</string>
-    <string name="best_streak">Mejor racha</string>
-    <string name="days_suffix">días</string>
-    <string name="progress_label">Progreso</string>
-    <string name="completion_trend">Tendencia de completado</string>
-    <string name="empty_statistics_title">Sin datos</string>
-    <string name="empty_statistics_message">Completa algunos hábitos para ver tus estadísticas</string>
-    
-    <!-- Días de la semana (abreviados) -->
-    <string name="day_monday_short">Lun</string>
-    <string name="day_tuesday_short">Mar</string>
-    <string name="day_wednesday_short">Mié</string>
-    <string name="day_thursday_short">Jue</string>
-    <string name="day_friday_short">Vie</string>
-    <string name="day_saturday_short">Sáb</string>
-    <string name="day_sunday_short">Dom</string>
-    
-    <!-- Meses -->
-    <string name="month_january">Enero</string>
-    <string name="month_february">Febrero</string>
-    <string name="month_march">Marzo</string>
-    <string name="month_april">Abril</string>
-    <string name="month_may">Mayo</string>
-    <string name="month_june">Junio</string>
-    <string name="month_july">Julio</string>
-    <string name="month_august">Agosto</string>
-    <string name="month_september">Septiembre</string>
-    <string name="month_october">Octubre</string>
-    <string name="month_november">Noviembre</string>
-    <string name="month_december">Diciembre</string>
-    
-    <!-- Descripciones de contenido -->
-    <string name="icon_description">Icono de hábito</string>
+    <!-- Iconos y descripciones -->
     <string name="add_icon">Añadir</string>
-    <string name="chart_icon">Gráfico</string>
     <string name="settings_icon">Configuración</string>
     <string name="delete_icon">Eliminar</string>
     <string name="previous_month">Mes anterior</string>
     <string name="next_month">Mes siguiente</string>
     
-    <!-- Pantalla de configuración -->
+    <!-- Navegación -->
+    <string name="calendar_title">Calendario</string>
+    <string name="objectives_title">Objetivos</string>
+    <string name="chart_title">Progreso</string>
     <string name="settings_title">Configuración</string>
-    <string name="settings_button">Configuración</string>
-    <string name="language_section">Idioma</string>
-    <string name="select_language">Seleccionar idioma</string>
-    <string name="language_spanish">Español</string>
-    <string name="language_english">English</string>
-    <string name="language_system">Sistema (predeterminado)</string>
-    <string name="app_info_section">Información</string>
-    <string name="app_version">Versión de la app</string>
-    <string name="theme_section">Apariencia</string>
-    <string name="theme_mode">Tema</string>
-    <string name="theme_light">Claro</string>
-    <string name="theme_dark">Oscuro</string>
-    <string name="theme_system">Sistema</string>
-    <string name="restart_required">Reinicia la app para aplicar los cambios</string>
-    <string name="habit_tracking">Seguimiento de hábitos</string>
-    <string name="feature_coming_soon">Función próximamente disponible</string>
-    <string name="ok">OK</string>
     
     <!-- Calendario Mensual -->
-    <string name="calendar_title">Calendario</string>
     <string name="no_note">Sin nota</string>
     <string name="note_label">Nota del día</string>
     <string name="note_hint">¿Cómo fue tu día?</string>
-    <string name="save">Guardar</string>
     
     <!-- Tabla de Objetivos -->
-    <string name="objectives_title">Objetivos</string>
     <string name="add_objective">Añadir objetivo</string>
     <string name="objective_name">Nombre del objetivo</string>
     <string name="objective_hint">Ej: Leer 50 páginas</string>
-    <string name="add">Añadir</string>
     <string name="no_objectives">No hay objetivos</string>
     <string name="no_objectives_hint">Añade tus objetivos del mes usando el botón +</string>
     <string name="delete_objective_title">¿Eliminar objetivo?</string>
     <string name="delete_objective_message">Se eliminará \"%s\" y todas sus marcas de completado</string>
+    <string name="objectives_completed">Objetivos completados</string>
     
     <!-- Gráfica de Progreso -->
-    <string name="chart_title">Progreso</string>
     <string name="daily_progress">Progreso Diario</string>
-    <string name="objectives_completed">Objetivos completados</string>
     <string name="day_of_month">Día del mes</string>
     <string name="no_data_chart">Sin datos</string>
     <string name="no_data_chart_hint">Añade objetivos y márcalos como completados para ver tu progreso</string>
@@ -144,4 +52,20 @@
     <string name="total_completions">Completados</string>
     <string name="average_per_day">Promedio/día</string>
     <string name="best_day">Mejor día</string>
+    
+    <!-- Configuración -->
+    <string name="language_section">Idioma</string>
+    <string name="select_language">Seleccionar idioma</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_english">English</string>
+    <string name="language_system">Sistema (predeterminado)</string>
+    <string name="theme_section">Apariencia</string>
+    <string name="theme_mode">Tema</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="theme_system">Sistema</string>
+    <string name="app_info_section">Información</string>
+    <string name="app_version">Versión de la app</string>
+    <string name="feature_coming_soon">Función próximamente disponible</string>
+    <string name="ok">OK</string>
 </resources>

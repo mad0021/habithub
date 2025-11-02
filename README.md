@@ -1,5 +1,10 @@
 # HabitHub - Aplicación de Seguimiento de Hábitos
 
+[![CI](https://github.com/dennnisver4/HabitHub/actions/workflows/android-ci.yml/badge.svg)](https://github.com/dennnisver4/HabitHub/actions/workflows/android-ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Android](https://img.shields.io/badge/Android-26%2B-green.svg)](https://android.com)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-blue.svg)](https://kotlinlang.org)
+
 ## 📱 Descripción
 HabitHub es una aplicación Android moderna para el seguimiento de hábitos personales y disciplina. Permite trackear rutinas diarias, visualizar tu progreso a través del tiempo y mantener la motivación con estadísticas detalladas.
 
@@ -195,25 +200,207 @@ Los datos se almacenan localmente en el dispositivo usando Room Database. Todos 
 1. Verifica que la biblioteca Vico esté correctamente importada
 2. Asegúrate de tener datos en el periodo seleccionado
 
-## 🔮 Futuras Mejoras
+## � CI/CD y Workflows
+
+### GitHub Actions
+
+El proyecto incluye workflows automatizados profesionales:
+
+#### 🔨 CI Pipeline (`android-ci.yml`)
+Se ejecuta en cada push y pull request:
+- ✅ Build del proyecto
+- ✅ Tests unitarios y de integración
+- ✅ Análisis de código con ktlint
+- ✅ Android Lint
+- ✅ Tests instrumentados (en PRs)
+- ✅ Reporte de cobertura de tests
+- ✅ Generación de APK debug
+
+#### 📦 Release Pipeline (`release.yml`)
+Se activa con tags `v*.*.*`:
+- 📦 Build de APK release
+- 🔐 Firmado de APK (si está configurado)
+- 📝 Generación automática de changelog
+- 🚀 Creación de GitHub Release
+- 📤 Subida de artifacts
+
+#### 🔍 Code Quality (`code-quality.yml`)
+Se ejecuta en pull requests:
+- 🔎 Análisis estático con Detekt
+- 📊 Análisis de complejidad de código
+- ☁️ Integración con SonarCloud (opcional)
+- 📈 Verificación de actualizaciones de dependencias
+
+#### 🤖 Dependabot
+- 📦 Actualizaciones automáticas de Gradle
+- 🔄 Actualizaciones de GitHub Actions
+- ✅ Auto-merge de parches seguros
+
+### Calidad de Código
+
+```bash
+# Verificar estilo de código
+./gradlew ktlintCheck
+
+# Auto-formatear código
+./gradlew ktlintFormat
+
+# Análisis estático
+./gradlew detekt
+
+# Android Lint
+./gradlew lint
+
+# Verificar actualizaciones de dependencias
+./gradlew dependencyUpdates
+```
+
+### Crear un Release
+
+```bash
+# 1. Asegúrate de estar en main y actualizado
+git checkout main
+git pull origin main
+
+# 2. Crea y empuja un tag
+git tag -a v1.0.0 -m "Release v1.0.0: Descripción de cambios"
+git push origin v1.0.0
+
+# 3. GitHub Actions automáticamente:
+#    - Compila el APK release
+#    - Crea el GitHub Release
+#    - Genera el changelog
+#    - Sube el APK como artifact
+```
+
+## 🧪 Testing
+
+### Ejecutar Tests Localmente
+
+```bash
+# Tests unitarios
+./gradlew test
+
+# Tests instrumentados (requiere emulador o dispositivo)
+./gradlew connectedAndroidTest
+
+# Todos los checks (tests + lint)
+./gradlew check
+
+# Con reporte de cobertura
+./gradlew testDebugUnitTest jacocoTestReport
+```
+
+### Cobertura de Tests
+
+Los reportes se generan en:
+- Tests unitarios: `app/build/reports/tests/testDebugUnitTest/index.html`
+- Android Lint: `app/build/reports/lint-results.html`
+- Detekt: `build/reports/detekt/detekt.html`
+- Cobertura: `app/build/reports/jacoco/html/index.html`
+
+## 🤝 Contribuir
+
+¡Las contribuciones son bienvenidas! Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles.
+
+### Proceso de Contribución
+
+1. **Fork** el repositorio
+2. **Crea** una rama: `git checkout -b feature/AmazingFeature`
+3. **Commit** con Conventional Commits: `git commit -m 'feat: Add AmazingFeature'`
+4. **Push**: `git push origin feature/AmazingFeature`
+5. **Abre** un Pull Request
+
+### Conventional Commits
+
+Seguimos [Conventional Commits](https://www.conventionalcommits.org/):
+
+- `feat:` Nueva funcionalidad
+- `fix:` Corrección de bug
+- `docs:` Cambios en documentación
+- `style:` Formato, espacios (sin cambios de código)
+- `refactor:` Refactorización de código
+- `test:` Añadir o modificar tests
+- `chore:` Mantenimiento, dependencias
+- `ci:` Cambios en CI/CD
+
+**Ejemplo:**
+```
+feat(calendar): add swipe gesture to navigate months
+
+- Added swipe left/right to change months
+- Improved animation transitions
+- Updated tests
+
+Closes #123
+```
+
+## �🔮 Futuras Mejoras
 
 - [ ] Recordatorios y notificaciones
 - [ ] Widgets para la pantalla de inicio
 - [ ] Racha de días consecutivos
 - [ ] Exportar/importar datos
-- [ ] Temas personalizados (modo oscuro/claro)
+- [ ] ✅ ~~Temas personalizados (modo oscuro OLED)~~ ✅ Completado
 - [ ] Categorías de hábitos
 - [ ] Objetivos semanales/mensuales
 - [ ] Sincronización en la nube
+- [ ] ✅ ~~CI/CD completo~~ ✅ Completado
+- [ ] Tests unitarios (70%+ cobertura)
 
-## 📄 Licencia
+## � Estado del Proyecto
 
-Este proyecto es de uso personal.
+| Característica | Estado |
+|----------------|--------|
+| MVVM Architecture | ✅ Implementado |
+| Hilt DI | ✅ Implementado |
+| Room Database | ✅ Implementado |
+| Localization (ES/EN) | ✅ Implementado |
+| OLED Dark Theme | ✅ Implementado |
+| Material Design 3 | ✅ Implementado |
+| CI/CD Pipeline | ✅ Implementado |
+| Code Quality Tools | ✅ Implementado |
+| Unit Tests | 🚧 En progreso |
+| Widget Home Screen | 🔜 Próximamente |
+| Cloud Sync | 🔜 Próximamente |
+
+##  Licencia
+
+Este proyecto está bajo la [Licencia MIT](LICENSE). Esto significa que puedes:
+
+- ✅ Usar el código libremente en proyectos personales y comerciales
+- ✅ Modificar y adaptar el código a tus necesidades
+- ✅ Distribuir el código original o modificado
+- ✅ Usar el código en aplicaciones privadas
+
+La única condición es mantener el aviso de copyright y la licencia en las copias del software.
 
 ## 👨‍💻 Desarrollador
 
-Desarrollado para uso personal con Android Studio Narwhal 4 Feature Drop.
+**Dennis Ver**
+
+- GitHub: [@dennnisver4](https://github.com/dennnisver4)
+- Email: [contacto@realdavidbb@gmail.com](mailto:realdavidbb@gmail.com)
+
+Desarrollado con ❤️ usando Android Studio y las últimas tecnologías de Android.
+
+## 🙏 Agradecimientos
+
+- [Jetpack Compose](https://developer.android.com/jetpack/compose) - UI moderna declarativa
+- [Hilt](https://dagger.dev/hilt/) - Inyección de dependencias
+- [Room](https://developer.android.com/training/data-storage/room) - Base de datos local
+- [Vico Charts](https://github.com/patrykandpatrick/vico) - Gráficas elegantes
+- [Material Design 3](https://m3.material.io/) - Sistema de diseño
+- [GitHub Actions](https://github.com/features/actions) - CI/CD automatizado
 
 ---
 
-**¡Empieza hoy mismo a construir mejores hábitos con HabitHub! 💪🎯**
+<div align="center">
+
+**⭐ Si te gusta HabitHub, dale una estrella ⭐**
+
+**¡Empieza hoy mismo a construir mejores hábitos! 💪🎯**
+
+Made with ❤️ and ☕
+
+</div>
