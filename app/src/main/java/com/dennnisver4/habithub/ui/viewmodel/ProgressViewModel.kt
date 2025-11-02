@@ -6,7 +6,14 @@ import com.dennnisver4.habithub.data.DailyCompletionCount
 import com.dennnisver4.habithub.data.MonthlyObjective
 import com.dennnisver4.habithub.data.repository.ProgressRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
