@@ -11,10 +11,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -34,22 +32,25 @@ class SplashActivity : ComponentActivity() {
             Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
                 // Creamos la transición y las animaciones aquí para poder sincronizar la gráfica y el texto
                 val transition = rememberInfiniteTransition()
-                val anims = List(6) { index ->
-                    transition.animateFloat(
-                        initialValue = 0f,
-                        targetValue = 1f,
-                        animationSpec = infiniteRepeatable(
-                            animation = keyframes {
-                                durationMillis = 1200
-                                0f at 0
-                                1f at 600
-                                0.2f at 1000
-                            },
-                            repeatMode = RepeatMode.Reverse,
-                            initialStartOffset = StartOffset(index * 120)
+                val anims =
+                    List(6) { index ->
+                        transition.animateFloat(
+                            initialValue = 0f,
+                            targetValue = 1f,
+                            animationSpec =
+                                infiniteRepeatable(
+                                    animation =
+                                        keyframes {
+                                            durationMillis = 1200
+                                            0f at 0
+                                            1f at 600
+                                            0.2f at 1000
+                                        },
+                                    repeatMode = RepeatMode.Reverse,
+                                    initialStartOffset = StartOffset(index * 120),
+                                ),
                         )
-                    )
-                }
+                    }
 
                 // Promedio de los valores animados para desplazar el texto en sincronía
                 val avg = anims.map { it.value }.average().toFloat()
@@ -57,7 +58,7 @@ class SplashActivity : ComponentActivity() {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     AnimatedLineChart(anims = anims, modifier = Modifier.size(220.dp))
                     Spacer(modifier = Modifier.height(20.dp))
@@ -66,7 +67,7 @@ class SplashActivity : ComponentActivity() {
                         text = stringResource(id = R.string.habit_tracking),
                         style = MaterialTheme.typography.titleLarge,
                         color = Color(0xFF81D4FA), // azul claro
-                        modifier = Modifier.offset(y = ((0.5f - avg) * 40f).dp)
+                        modifier = Modifier.offset(y = ((0.5f - avg) * 40f).dp),
                     )
                 }
                 LaunchedEffect(Unit) {
@@ -81,26 +82,31 @@ class SplashActivity : ComponentActivity() {
 }
 
 @Composable
-fun AnimatedLineChart(anims: List<State<Float>>, modifier: Modifier = Modifier) {
+fun AnimatedLineChart(
+    anims: List<State<Float>>,
+    modifier: Modifier = Modifier,
+) {
     Canvas(modifier = modifier) {
         val w = size.width
         val h = size.height
         val spacing = if (anims.size > 1) w / (anims.size - 1) else w
 
-        val points = anims.mapIndexed { i, state ->
-            val x = i * spacing
-            // y se mueve en torno a la mitad del canvas; multiplicador controla amplitud
-            val baseY = h * 0.6f
-            val amplitude = h * 0.45f
-            val y = baseY - (state.value * amplitude - amplitude / 2f)
-            Offset(x, y)
-        }
+        val points =
+            anims.mapIndexed { i, state ->
+                val x = i * spacing
+                // y se mueve en torno a la mitad del canvas; multiplicador controla amplitud
+                val baseY = h * 0.6f
+                val amplitude = h * 0.45f
+                val y = baseY - (state.value * amplitude - amplitude / 2f)
+                Offset(x, y)
+            }
 
         // Línea principal
-        val path = Path().apply {
-            if (points.isNotEmpty()) moveTo(points.first().x, points.first().y)
-            for (p in points.drop(1)) lineTo(p.x, p.y)
-        }
+        val path =
+            Path().apply {
+                if (points.isNotEmpty()) moveTo(points.first().x, points.first().y)
+                for (p in points.drop(1)) lineTo(p.x, p.y)
+            }
 
         drawPath(path, color = Color(0xFF4CAF50), style = Stroke(width = 8f, cap = StrokeCap.Round))
 

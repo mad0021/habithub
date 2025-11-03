@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Configuración de seguridad de red - MÁXIMA SEGURIDAD
+    - Bloquea TODO el tráfico de red (HTTP y HTTPS)
+    - Sin texto claro permitido
+    - Sin certificados de usuario permitidos
+    - 100% offline, sin conexiones externas
+-->
+<network-security-config>
+    <!-- Bloquear TODO el tráfico de red para máxima privacidad -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- Lista vacía - no confiar en ningún certificado -->
+            <!-- Esto bloquea efectivamente todas las conexiones HTTPS -->
+        </trust-anchors>
+    </base-config>
+
+    <!-- Sin dominios permitidos - aplicación 100% offline -->
+    <!-- Sin excepciones de debug -->
+</network-security-config>

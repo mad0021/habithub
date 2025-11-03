@@ -24,11 +24,23 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            // Activar minificación y ofuscación para seguridad
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
+
+            // Firmar con clave de producción
+            // signingConfig = signingConfigs.getByName("release")
+        }
+
+        debug {
+            // En debug también activar para testing
+            isMinifyEnabled = false
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
         }
     }
     compileOptions {

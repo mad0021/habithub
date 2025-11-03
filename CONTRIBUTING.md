@@ -1,58 +1,58 @@
 # HabitHub - Contributing Guide
 
-¡Gracias por tu interés en contribuir a HabitHub! 🎉
+Thank you for your interest in contributing to HabitHub! 🎉
 
-## 📋 Tabla de Contenidos
-- [Código de Conducta](#código-de-conducta)
-- [¿Cómo puedo contribuir?](#cómo-puedo-contribuir)
-- [Guía de Estilo](#guía-de-estilo)
-- [Proceso de Pull Request](#proceso-de-pull-request)
-- [Estructura del Proyecto](#estructura-del-proyecto)
+## 📋 Table of Contents
+- [Code of Conduct](#code-of-conduct)
+- [How Can I Contribute?](#how-can-i-contribute)
+- [Style Guide](#style-guide)
+- [Pull Request Process](#pull-request-process)
+- [Project Structure](#project-structure)
 
-## 📜 Código de Conducta
+## 📜 Code of Conduct
 
-Este proyecto se adhiere a un código de conducta. Al participar, se espera que mantengas este código. Por favor, reporta comportamientos inaceptables.
+This project adheres to a code of conduct. By participating, you are expected to uphold this code. Please report unacceptable behavior.
 
-## 🤝 ¿Cómo puedo contribuir?
+## 🤝 How Can I Contribute?
 
-### 🐛 Reportar Bugs
+### 🐛 Reporting Bugs
 
-Los bugs se rastrean como [GitHub issues](https://github.com/dennnisver4/HabitHub/issues). Crea un issue y proporciona la siguiente información:
+Bugs are tracked as [GitHub issues](https://github.com/dennnisver4/HabitHub/issues). Create an issue and provide the following information:
 
-- Título claro y descriptivo
-- Pasos detallados para reproducir el problema
-- Comportamiento esperado vs actual
-- Screenshots si es posible
-- Información del dispositivo (modelo, versión Android)
+- Clear and descriptive title
+- Detailed steps to reproduce the problem
+- Expected vs actual behavior
+- Screenshots if possible
+- Device information (model, Android version)
 
-### ✨ Sugerir Mejoras
+### ✨ Suggesting Enhancements
 
-Las sugerencias de mejoras también se rastrean como issues. Incluye:
+Enhancement suggestions are also tracked as issues. Include:
 
-- Descripción clara de la funcionalidad
-- Problema que resuelve
-- Ejemplos de uso o mockups
+- Clear description of the functionality
+- Problem it solves
+- Usage examples or mockups
 
 ### 💻 Pull Requests
 
-1. **Fork** el repositorio
-2. **Crea** una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. **Commit** tus cambios (`git commit -m 'feat: Add some AmazingFeature'`)
-4. **Push** a la rama (`git push origin feature/AmazingFeature`)
-5. **Abre** un Pull Request
+1. **Fork** the repository
+2. **Create** a branch for your feature (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'feat: Add some AmazingFeature'`)
+4. **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. **Open** a Pull Request
 
-## 🎨 Guía de Estilo
+## 🎨 Style Guide
 
 ### Kotlin
 
-- Seguir [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
-- Usar 4 espacios para indentación
-- Máximo 120 caracteres por línea
-- Usar nombres descriptivos en inglés para variables y funciones
+- Follow [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
+- Use 4 spaces for indentation
+- Maximum 120 characters per line
+- Use descriptive English names for variables and functions
 
 ### Commits
 
-Seguimos [Conventional Commits](https://www.conventionalcommits.org/):
+We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
 <type>(<scope>): <subject>
@@ -62,73 +62,73 @@ Seguimos [Conventional Commits](https://www.conventionalcommits.org/):
 <footer>
 ```
 
-**Tipos:**
-- `feat`: Nueva funcionalidad
-- `fix`: Corrección de bug
-- `docs`: Cambios en documentación
-- `style`: Formateo, espacios, etc.
-- `refactor`: Refactorización de código
-- `test`: Añadir o modificar tests
-- `chore`: Mantenimiento, dependencias
+**Types:**
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Formatting, whitespace, etc.
+- `refactor`: Code refactoring
+- `test`: Add or modify tests
+- `chore`: Maintenance, dependencies
 
-**Ejemplos:**
+**Examples:**
 ```
 feat(calendar): add swipe to delete notes
 fix(objectives): resolve crash when adding empty objective
 docs(readme): update installation instructions
 ```
 
-### Arquitectura
+### Architecture
 
-- **MVVM** con Clean Architecture
-- **Hilt** para inyección de dependencias
-- **Room** para persistencia
-- **Jetpack Compose** para UI
-- **Coroutines** para asincronía
+- **MVVM** with Clean Architecture
+- **Hilt** for dependency injection
+- **Room** for persistence
+- **Jetpack Compose** for UI
+- **Coroutines** for asynchronous operations
 
 ### Tests
 
-- Tests unitarios para ViewModels
-- Tests de integración para Repositories
-- UI tests para flujos críticos
-- Cobertura mínima: 70%
+- Unit tests for ViewModels
+- Integration tests for Repositories
+- UI tests for critical flows
+- Minimum coverage: 70%
 
-## 🔄 Proceso de Pull Request
+## 🔄 Pull Request Process
 
-1. **Actualiza** tu fork con la rama main
-2. **Asegúrate** de que los tests pasen
-3. **Ejecuta** lint y corrígelo
-4. **Actualiza** la documentación si es necesario
-5. **Completa** el template del PR
-6. **Espera** la revisión
+1. **Update** your fork with the main branch
+2. **Ensure** that tests pass
+3. **Run** lint and fix issues
+4. **Update** documentation if necessary
+5. **Complete** the PR template
+6. **Wait** for review
 
-### Checklist del PR
+### PR Checklist
 
-- [ ] Tests pasan localmente
-- [ ] Código sigue el estilo del proyecto
-- [ ] Documentación actualizada
-- [ ] Funciona en español e inglés
-- [ ] Probado en modo claro y oscuro
-- [ ] Sin warnings ni memory leaks
+- [ ] Tests pass locally
+- [ ] Code follows project style
+- [ ] Documentation updated
+- [ ] Works in Spanish and English
+- [ ] Tested in light and dark modes
+- [ ] No warnings or memory leaks
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 app/src/main/java/com/dennnisver4/habithub/
-├── data/                       # Capa de datos
-│   ├── *.kt                    # Entidades de Room
-│   └── repository/             # Repositorios
-├── di/                         # Inyección de dependencias
+├── data/                       # Data layer
+│   ├── *.kt                    # Room entities
+│   └── repository/             # Repositories
+├── di/                         # Dependency injection
 ├── ui/
-│   ├── navigation/             # Navegación
-│   ├── screens/                # Pantallas Compose
-│   ├── theme/                  # Tema y estilos
+│   ├── navigation/             # Navigation
+│   ├── screens/                # Compose screens
+│   ├── theme/                  # Theme and styles
 │   └── viewmodel/              # ViewModels
 ├── MainActivity.kt
 └── HabitHubApplication.kt
 ```
 
-## 🧪 Testing Local
+## 🧪 Local Testing
 
 ```bash
 # Unit tests
@@ -144,14 +144,14 @@ app/src/main/java/com/dennnisver4/habithub/
 ./gradlew assembleDebug
 ```
 
-## 📞 Contacto
+## 📞 Contact
 
-¿Preguntas? Abre un [issue](https://github.com/dennnisver4/HabitHub/issues) o contacta a [@dennnisver4](https://github.com/dennnisver4).
+Questions? Open an [issue](https://github.com/dennnisver4/HabitHub/issues) or contact [@dennnisver4](https://github.com/dennnisver4).
 
-## 📄 Licencia
+## 📄 License
 
-Al contribuir a HabitHub, aceptas que tus contribuciones serán licenciadas bajo la [Licencia MIT](LICENSE). Esto significa que tu código será de código abierto y podrá ser utilizado libremente por otros, manteniendo siempre el crédito a los autores originales.
+By contributing to HabitHub, you agree that your contributions will be licensed under the [MIT License](LICENSE). This means your code will be open source and can be freely used by others, always maintaining credit to the original authors.
 
 ---
 
-¡Gracias por contribuir a HabitHub! 🚀
+Thank you for contributing to HabitHub! 🚀

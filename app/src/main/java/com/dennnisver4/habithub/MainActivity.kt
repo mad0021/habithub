@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -14,8 +16,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.animation.*
-import androidx.compose.animation.core.tween
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -39,20 +39,21 @@ class MainActivity : AppCompatActivity() {
             val themePreferences = remember { ThemePreferences(context) }
             val themeMode by themePreferences.themeMode.collectAsState(initial = ThemeMode.SYSTEM)
             val systemInDarkTheme = isSystemInDarkTheme()
-            
-            val darkTheme = when (themeMode) {
-                ThemeMode.LIGHT -> false
-                ThemeMode.DARK -> true
-                ThemeMode.SYSTEM -> systemInDarkTheme
-            }
-            
+
+            val darkTheme =
+                when (themeMode) {
+                    ThemeMode.LIGHT -> false
+                    ThemeMode.DARK -> true
+                    ThemeMode.SYSTEM -> systemInDarkTheme
+                }
+
             HabitHubTheme(
                 darkTheme = darkTheme,
-                useOledTheme = true  // Siempre usar tema OLED cuando está en oscuro
+                useOledTheme = true, // Siempre usar tema OLED cuando está en oscuro
             ) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.background,
                 ) {
                     HabitHubApp()
                 }
@@ -64,34 +65,34 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun HabitHubApp() {
     val navController = rememberNavController()
-    
+
     NavHost(
         navController = navController,
         startDestination = Screen.MonthlyCalendar.route,
         enterTransition = {
             slideIntoContainer(
                 AnimatedContentTransitionScope.SlideDirection.Left,
-                animationSpec = tween(400)
+                animationSpec = tween(400),
             ) + fadeIn(animationSpec = tween(400))
         },
         exitTransition = {
             slideOutOfContainer(
                 AnimatedContentTransitionScope.SlideDirection.Left,
-                animationSpec = tween(400)
+                animationSpec = tween(400),
             ) + fadeOut(animationSpec = tween(400))
         },
         popEnterTransition = {
             slideIntoContainer(
                 AnimatedContentTransitionScope.SlideDirection.Right,
-                animationSpec = tween(400)
+                animationSpec = tween(400),
             ) + fadeIn(animationSpec = tween(400))
         },
         popExitTransition = {
             slideOutOfContainer(
                 AnimatedContentTransitionScope.SlideDirection.Right,
-                animationSpec = tween(400)
+                animationSpec = tween(400),
             ) + fadeOut(animationSpec = tween(400))
-        }
+        },
     ) {
         composable(Screen.MonthlyCalendar.route) {
             MonthlyCalendarScreen(
@@ -103,10 +104,10 @@ fun HabitHubApp() {
                 },
                 onNavigateToSettings = {
                     navController.navigate(Screen.Settings.route)
-                }
+                },
             )
         }
-        
+
         composable(Screen.ObjectivesTable.route) {
             ObjectivesTableScreen(
                 onNavigateToCalendar = {
@@ -119,10 +120,10 @@ fun HabitHubApp() {
                 },
                 onNavigateToSettings = {
                     navController.navigate(Screen.Settings.route)
-                }
+                },
             )
         }
-        
+
         composable(Screen.ProgressChart.route) {
             ProgressChartScreen(
                 onNavigateToCalendar = {
@@ -135,15 +136,15 @@ fun HabitHubApp() {
                 },
                 onNavigateToSettings = {
                     navController.navigate(Screen.Settings.route)
-                }
+                },
             )
         }
-        
+
         composable(Screen.Settings.route) {
             SettingsScreen(
                 onNavigateBack = {
                     navController.popBackStack()
-                }
+                },
             )
         }
     }

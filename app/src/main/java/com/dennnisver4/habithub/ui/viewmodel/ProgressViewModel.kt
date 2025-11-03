@@ -23,72 +23,76 @@ import javax.inject.Inject
  * Maneja el estado y datos estadísticos de completaciones mensuales.
  */
 @HiltViewModel
-class ProgressViewModel @Inject constructor(
-    private val repository: ProgressRepository
-) : ViewModel() {
-    
-    // Estado del mes actual para las estadísticas
-    private val _currentYearMonth = MutableStateFlow(YearMonth.now())
-    val currentYearMonth: StateFlow<YearMonth> = _currentYearMonth.asStateFlow()
-    
-    // String del mes en formato yyyy-MM para queries a la base de datos
-    private val yearMonthString: StateFlow<String> = currentYearMonth.map {
-        it.format(DateTimeFormatter.ofPattern("yyyy-MM"))
-    }.stateIn(
-        viewModelScope,
-        SharingStarted.WhileSubscribed(5000),
-        "",
-    )
-    
-    /**
-     * Lista de objetivos del mes actual
-     */
-    val monthlyObjectives: StateFlow<List<MonthlyObjective>> = yearMonthString.flatMapLatest { yearMonth ->
-        if (yearMonth.isNotEmpty()) {
-            repository.getMonthlyObjectives(yearMonth)
-        } else {
-            flowOf(emptyList())
+class ProgressViewModel
+    @Inject
+    constructor(
+        private val repository: ProgressRepository,
+    ) : ViewModel() {
+        // Estado del mes actual para las estadísticas
+        private val _currentYearMonth = MutableStateFlow(YearMonth.now())
+        val currentYearMonth: StateFlow<YearMonth> = _currentYearMonth.asStateFlow()
+
+        // String del mes en formato yyyy-MM para queries a la base de datos
+        private val yearMonthString: StateFlow<String> =
+            currentYearMonth.map {
+                it.format(DateTimeFormatter.ofPattern("yyyy-MM"))
+            }.stateIn(
+                viewModelScope,
+                SharingStarted.WhileSubscribed(5000),
+                "",
+            )
+
+        /**
+         * Lista de objetivos del mes actual
+         */
+        val monthlyObjectives: StateFlow<List<MonthlyObjective>> =
+            yearMonthString.flatMapLatest { yearMonth ->
+                if (yearMonth.isNotEmpty()) {
+                    repository.getMonthlyObjectives(yearMonth)
+                } else {
+                    flowOf(emptyList())
+                }
+            }.stateIn(
+                viewModelScope,
+                SharingStarted.WhileSubscribed(5000),
+                emptyList(),
+            )
+
+        /**
+         * Conteo diario de completaciones para el mes actual.
+         * Cada elemento contiene la fecha y el número de objetivos completados ese día.
+         */
+        val monthlyCompletionCounts: StateFlow<List<DailyCompletionCount>> =
+            yearMonthString.flatMapLatest { yearMonth ->
+                if (yearMonth.isNotEmpty()) {
+                    repository.getMonthlyCompletionCounts(yearMonth)
+                } else {
+                    flowOf(emptyList())
+                }
+            }.stateIn(
+                viewModelScope,
+                SharingStarted.WhileSubscribed(5000),
+                emptyList(),
+            )
+
+        /**
+         * Navega al mes anterior
+         */
+        fun navigateToPreviousMonth() {
+            _currentYearMonth.value = _currentYearMonth.value.minusMonths(1)
         }
-    }.stateIn(
-        viewModelScope,
-        SharingStarted.WhileSubscribed(5000),
-        emptyList(),
-    )
-    
-    /**
-     * Conteo diario de completaciones para el mes actual.
-     * Cada elemento contiene la fecha y el número de objetivos completados ese día.
-     */
-    val monthlyCompletionCounts: StateFlow<List<DailyCompletionCount>> = yearMonthString.flatMapLatest { yearMonth ->
-        if (yearMonth.isNotEmpty()) {
-            repository.getMonthlyCompletionCounts(yearMonth)
-        } else {
-            flowOf(emptyList())
+
+        /**
+         * Navega al mes siguiente
+         */
+        fun navigateToNextMonth() {
+            _currentYearMonth.value = _currentYearMonth.value.plusMonths(1)
         }
-    }.stateIn(
-        viewModelScope,
-        SharingStarted.WhileSubscribed(5000),
-        emptyList(),
-    )
-    
-    /**
-     * Navega al mes anterior
-     */
-    fun navigateToPreviousMonth() {
-        _currentYearMonth.value = _currentYearMonth.value.minusMonths(1)
+
+        /**
+         * Navega a un mes específico
+         */
+        fun navigateToMonth(yearMonth: YearMonth) {
+            _currentYearMonth.value = yearMonth
+        }
     }
-    
-    /**
-     * Navega al mes siguiente
-     */
-    fun navigateToNextMonth() {
-        _currentYearMonth.value = _currentYearMonth.value.plusMonths(1)
-    }
-    
-    /**
-     * Navega a un mes específico
-     */
-    fun navigateToMonth(yearMonth: YearMonth) {
-        _currentYearMonth.value = yearMonth
-    }
-}

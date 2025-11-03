@@ -9,5 +9,5 @@ data class MonthlyObjective(
     val id: Long = 0,
     val name: String,
     val yearMonth: String, // Formato: "2025-07" para Julio 2025
-    val orderIndex: Int = 0 // Para mantener el orden personalizado
+    val orderIndex: Int = 0, // Para mantener el orden personalizado
 )

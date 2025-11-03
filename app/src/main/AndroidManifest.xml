@@ -2,24 +2,37 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Sin permisos de red, ubicación, contactos, etc. - 100% offline -->
+    <!-- Sin acceso a Internet -->
+    <!-- Sin acceso a almacenamiento externo -->
+    <!-- Sin acceso a sensores innecesarios -->
+
     <application
         android:name=".HabitHubApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
+        android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HabitHub"
-        android:localeConfig="@xml/locales_config">
-        
+        android:localeConfig="@xml/locales_config"
+        android:usesCleartextTraffic="false"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:hasFragileUserData="true"
+        tools:targetApi="31">
+
         <!-- Splash Activity como punto de entrada -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.HabitHub">
+            android:theme="@style/Theme.HabitHub"
+            android:excludeFromRecents="false"
+            android:stateNotNeeded="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,11 +40,15 @@
         </activity>
 
         <!-- MainActivity principal -->
-            <activity
-                android:name=".MainActivity"
-                android:exported="false"
-                android:label="@string/app_name"
-                android:theme="@style/Theme.HabitHub" />
-        </application>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HabitHub"
+            android:windowSoftInputMode="adjustResize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+    </application>
 
-    </manifest>
+</manifest>

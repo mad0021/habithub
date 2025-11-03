@@ -12,13 +12,13 @@ import androidx.room.Index
             entity = MonthlyObjective::class,
             parentColumns = ["id"],
             childColumns = ["objectiveId"],
-            onDelete = ForeignKey.CASCADE
-        )
+            onDelete = ForeignKey.CASCADE,
+        ),
     ],
-    indices = [Index("objectiveId"), Index("date")]
+    indices = [Index("objectiveId"), Index("date")],
 )
 data class ObjectiveCompletion(
     val objectiveId: Long,
     val date: String, // Formato: "2025-07-15"
-    val isCompleted: Boolean = false
+    val isCompleted: Boolean = false,
 )

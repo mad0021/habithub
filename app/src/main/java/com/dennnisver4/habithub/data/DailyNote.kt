@@ -9,7 +9,7 @@ data class DailyNote(
     @PrimaryKey
     val date: String, // Formato: "2025-07-15"
     val note: String,
-    val mood: String = "" // Opcional: para añadir estado de ánimo
+    val mood: String = "", // Opcional: para añadir estado de ánimo
 )
 
 // Función auxiliar para crear desde LocalDate

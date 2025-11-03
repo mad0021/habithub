@@ -1,90 +1,108 @@
-# HabitHub - Aplicación de Gestión de Objetivos Mensuales
+# HabitHub - Monthly Objectives Management Application
 
 [![CI](https://github.com/mad0021/habithub/actions/workflows/android-ci.yml/badge.svg)](https://github.com/mad0021/habithub/actions/workflows/android-ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Android](https://img.shields.io/badge/Android-26%2B-green.svg)](https://android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-blue.svg)](https://kotlinlang.org)
+[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Offline-success.svg)](PRIVACY_POLICY.md)
+[![Security](https://img.shields.io/badge/Security-No%20Permissions-blue.svg)](SECURITY.md)
 
-## 📱 Descripción
-HabitHub es una aplicación Android moderna para la gestión de objetivos mensuales y notas diarias. Permite organizar tus metas, trackear tu progreso, añadir notas en el calendario y visualizar tus estadísticas con gráficos elegantes.
+## 📱 Overview
 
-## ✨ Características Principales
+HabitHub is a modern Android application for managing monthly objectives and daily notes. It enables you to organize your goals, track your progress, add calendar notes, and visualize your statistics with elegant charts.
 
-### 📅 Calendario Mensual (MonthlyCalendarScreen)
-- **Visualización mensual completa**: Calendario interactivo con todos los días del mes
-- **Notas diarias**: Añade y edita notas en cualquier día
-- **Navegación fluida**: Cambia entre meses fácilmente
-- **Interfaz intuitiva**: Diseño limpio y fácil de usar
+## 🔒 Privacy and Security
 
-### 🎯 Tabla de Objetivos (ObjectivesTableScreen)
-- **Gestión de objetivos mensuales**: Crea y organiza tus metas del mes
-- **Seguimiento de completado**: Marca objetivos como completados
-- **Estado visual**: Colores y estados claros para cada objetivo
-- **Edición rápida**: Modifica o elimina objetivos fácilmente
+**HabitHub is 100% private and secure:**
 
-### 📊 Gráficos de Progreso (ProgressChartScreen)
-- **Visualización de datos**: Gráficos elegantes con Vico Charts
-- **Estadísticas detalladas**: Porcentajes de completado y tendencias
-- **Análisis temporal**: Ve tu progreso a lo largo del tiempo
-- **Diseño Material3**: Gráficos modernos y animados
+- ✅ **No Internet**: Completely offline application
+- ✅ **No Permissions**: Does not request dangerous permissions
+- ✅ **No Data Collection**: Zero telemetry or analytics
+- ✅ **No Advertisements**: Ad-free experience
+- ✅ **No Cloud Backups**: Your data remains ONLY on your device
+- ✅ **Open Source**: Auditable and transparent
 
-### ⚙️ Configuración (SettingsScreen)
-- **Cambio de idioma**: Español e Inglés disponibles
-- **Tema OLED**: Modo claro y oscuro (optimizado para OLED)
-- **Preferencias persistentes**: Configuración guardada con DataStore
-- **Interfaz responsive**: Adaptable a diferentes tamaños de pantalla
+📄 Read our complete [Privacy Policy](PRIVACY_POLICY.md)
 
-## 🛠️ Stack Tecnológico
+🔐 Review our [Security Practices](SECURITY.md)
 
-### Framework y Lenguaje
+## ✨ Key Features
 
-- **Kotlin 2.0.21**: Lenguaje de programación moderno y seguro
-- **Jetpack Compose**: UI declarativa con Compose BOM 2024.12.01
-- **Material Design 3**: Material3 1.4.0-alpha03 con Adaptive y Material Icons
+### 📅 Monthly Calendar (MonthlyCalendarScreen)
+- **Complete monthly view**: Interactive calendar displaying all days of the month
+- **Daily notes**: Add and edit notes on any day
+- **Fluid navigation**: Easily switch between months
+- **Intuitive interface**: Clean and user-friendly design
 
-### Arquitectura
+### 🎯 Objectives Table (ObjectivesTableScreen)
+- **Monthly objectives management**: Create and organize your monthly goals
+- **Completion tracking**: Mark objectives as completed
+- **Visual status**: Clear colors and states for each objective
+- **Quick editing**: Easily modify or delete objectives
 
-- **MVVM** (Model-View-ViewModel) con Clean Architecture
-- **Hilt 2.46.1**: Inyección de dependencias de Dagger
-- **Room 2.6.0**: Persistencia de datos local con Flow
-- **Kotlin Coroutines**: Operaciones asíncronas
-- **DataStore 1.1.1**: Almacenamiento de preferencias
+### 📊 Progress Charts (ProgressChartScreen)
+- **Data visualization**: Elegant charts powered by Vico Charts
+- **Detailed statistics**: Completion percentages and trends
+- **Temporal analysis**: View your progress over time
+- **Material3 design**: Modern and animated charts
 
-### Bibliotecas Principales
+### ⚙️ Settings (SettingsScreen)
+- **Language selection**: Spanish and English available
+- **OLED theme**: Light and dark modes (OLED-optimized)
+- **Persistent preferences**: Configuration saved with DataStore
+- **Responsive interface**: Adaptable to different screen sizes
 
-- **Navigation Compose 2.8.5**: Navegación entre pantallas
-- **Vico Charts 1.13.1**: Gráficos elegantes y animados
-- **Coil 2.7.0**: Carga de imágenes y GIFs
-- **Lifecycle ViewModel 2.8.7**: Gestión del ciclo de vida
-- **AppCompat 1.7.0**: Soporte de localización
+## 🛠️ Technology Stack
 
-### Herramientas de Calidad
+### Framework and Language
 
-- **ktlint 12.1.2**: Análisis de estilo de código
-- **Detekt 1.23.7**: Análisis estático
-- **Dependency Updates 0.51.0**: Gestión de actualizaciones
+- **Kotlin 2.0.21**: Modern and safe programming language
+- **Jetpack Compose**: Declarative UI with Compose BOM 2024.12.01
+- **Material Design 3**: Material3 1.4.0-alpha03 with Adaptive and Material Icons
+
+### Architecture
+
+- **MVVM** (Model-View-ViewModel) with Clean Architecture
+- **Hilt 2.46.1**: Dagger dependency injection
+- **Room 2.6.0**: Local data persistence with Flow
+- **Kotlin Coroutines**: Asynchronous operations
+- **DataStore 1.1.1**: Preferences storage
+
+### Core Libraries
+
+- **Navigation Compose 2.8.5**: Screen navigation
+- **Vico Charts 1.13.1**: Elegant and animated charts
+- **Coil 2.7.0**: Image and GIF loading
+- **Lifecycle ViewModel 2.8.7**: Lifecycle management
+- **AppCompat 1.7.0**: Localization support
+
+### Quality Tools
+
+- **ktlint 12.1.2**: Code style analysis
+- **Detekt 1.23.7**: Static analysis
+- **Dependency Updates 0.51.0**: Dependency management
 - **MockK 1.14.4**: Testing framework
 
-## 📦 Estructura del Proyecto
+## 📦 Project Structure
 
 ```kotlin
 HabitHub/
 ├── app/src/main/java/com/dennnisver4/habithub/
-│   ├── data/                          # Capa de datos
-│   │   ├── DailyNote.kt              # Entity: Notas diarias
-│   │   ├── MonthlyObjective.kt       # Entity: Objetivos mensuales
-│   │   ├── ObjectiveCompletion.kt    # Entity: Completado de objetivos
-│   │   ├── HabitHubDao.kt           # DAO: Operaciones de BD
+│   ├── data/                          # Data layer
+│   │   ├── DailyNote.kt              # Entity: Daily notes
+│   │   ├── MonthlyObjective.kt       # Entity: Monthly objectives
+│   │   ├── ObjectiveCompletion.kt    # Entity: Objective completion
+│   │   ├── HabitHubDao.kt           # DAO: Database operations
 │   │   ├── HabitHubDatabase.kt      # Room Database
-│   │   ├── ThemePreferences.kt       # DataStore: Preferencias
-│   │   └── repository/               # Repositorios
+│   │   ├── ThemePreferences.kt       # DataStore: Preferences
+│   │   └── repository/               # Repositories
 │   │       ├── MonthlyCalendarRepository.kt
 │   │       ├── ObjectivesRepository.kt
 │   │       └── ProgressRepository.kt
-│   ├── di/                           # Inyección de dependencias
-│   │   └── AppModule.kt             # Módulo Hilt
-│   ├── ui/                           # Capa de presentación
-│   │   ├── screens/                  # Pantallas Compose
+│   ├── di/                           # Dependency injection
+│   │   └── AppModule.kt             # Hilt module
+│   ├── ui/                           # Presentation layer
+│   │   ├── screens/                  # Compose screens
 │   │   │   ├── MonthlyCalendarScreen.kt
 │   │   │   ├── ObjectivesTableScreen.kt
 │   │   │   ├── ProgressChartScreen.kt
@@ -93,48 +111,48 @@ HabitHub/
 │   │   │   ├── MonthlyCalendarViewModel.kt
 │   │   │   ├── ObjectivesViewModel.kt
 │   │   │   └── ProgressViewModel.kt
-│   │   ├── navigation/              # Navegación
+│   │   ├── navigation/              # Navigation
 │   │   │   └── Screen.kt
-│   │   └── theme/                   # Tema Material3
+│   │   └── theme/                   # Material3 theme
 │   │       ├── Color.kt
 │   │       ├── Shape.kt
 │   │       ├── Theme.kt
 │   │       └── Type.kt
 │   ├── HabitHubApplication.kt       # @HiltAndroidApp
 │   ├── MainActivity.kt              # @AndroidEntryPoint
-│   └── SplashActivity.kt            # Pantalla de inicio
+│   └── SplashActivity.kt            # Splash screen
 ├── app/src/main/res/
-│   ├── values/                      # Recursos español (default)
+│   ├── values/                      # Spanish resources (default)
 │   │   ├── strings.xml
 │   │   ├── colors.xml
 │   │   └── themes.xml
-│   └── values-en/                   # Recursos inglés
+│   └── values-en/                   # English resources
 │       └── strings.xml
 ├── .github/workflows/               # CI/CD
-│   ├── android-ci.yml              # Pipeline principal
-│   ├── release.yml                 # Releases automáticos
-│   ├── code-quality.yml            # Análisis de calidad
+│   ├── android-ci.yml              # Main pipeline
+│   ├── release.yml                 # Automated releases
+│   ├── code-quality.yml            # Quality analysis
 │   └── dependabot-auto-merge.yml   # Auto-merge
-├── config/detekt/                   # Configuración Detekt
+├── config/detekt/                   # Detekt configuration
 │   ├── detekt.yml
 │   └── baseline.xml
-├── .editorconfig                    # Configuración editor
-├── CONTRIBUTING.md                  # Guía de contribución
+├── .editorconfig                    # Editor configuration
+├── CONTRIBUTING.md                  # Contribution guide
 ├── LICENSE                          # MIT License
-└── README.md                        # Este archivo
+└── README.md                        # This file
 ```
 
-## 🚀 Requisitos y Configuración
+## 🚀 Requirements and Setup
 
-### Requisitos del Sistema
+### System Requirements
 
-- **Android Studio**: Ladybug 2024.2.1 o superior
+- **Android Studio**: Ladybug 2024.2.1 or higher
 - **JDK**: 11 (local) / 17 (CI/CD)
 - **Android SDK**: 36
 - **Gradle**: 8.13.0
 - **AGP**: 8.13.0
 
-### Configuración del Proyecto
+### Project Configuration
 
 - **Package**: `com.dennnisver4.habithub`
 - **minSdk**: 26 (Android 8.0 Oreo)
@@ -143,36 +161,36 @@ HabitHub/
 - **versionCode**: 1
 - **versionName**: "1.0"
 
-### Pasos de Instalación
+### Installation Steps
 
-1. **Clonar el repositorio**:
+1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/mad0021/habithub.git
    cd habithub
    ```
 
-2. **Abrir en Android Studio**:
-   - `File` > `Open` > Selecciona la carpeta del proyecto
-   - Espera a que Gradle sincronice automáticamente
+2. **Open in Android Studio**:
+   - `File` > `Open` > Select the project folder
+   - Wait for Gradle to sync automatically
 
-3. **Compilar el proyecto**:
+3. **Build the project**:
 
    ```bash
    ./gradlew assembleDebug
    ```
 
-   O desde Android Studio: `Build` > `Make Project` (`Ctrl + F9`)
+   Or from Android Studio: `Build` > `Make Project` (`Ctrl + F9`)
 
-4. **Ejecutar la aplicación**:
-   - Conecta un dispositivo Android (API 26+) o inicia un emulador
+4. **Run the application**:
+   - Connect an Android device (API 26+) or start an emulator
    - `Run` > `Run 'app'` (`Shift + F10`)
 
-## � Base de Datos
+## 💾 Database
 
-HabitHub utiliza Room Database para almacenamiento local persistente.
+HabitHub uses Room Database for persistent local storage.
 
-### Esquema de Base de Datos
+### Database Schema
 
 **daily_notes**
 
@@ -209,194 +227,194 @@ CREATE TABLE objective_completions (
 );
 ```
 
-### Repositorios
+### Repositories
 
-- **MonthlyCalendarRepository**: Gestión de notas diarias en el calendario
-- **ObjectivesRepository**: CRUD de objetivos mensuales
-- **ProgressRepository**: Estadísticas y datos para gráficos
+- **MonthlyCalendarRepository**: Daily notes management for calendar
+- **ObjectivesRepository**: CRUD operations for monthly objectives
+- **ProgressRepository**: Statistics and data for charts
 
-## � Localización
+## 🌐 Localization
 
-La aplicación soporta múltiples idiomas:
+The application supports multiple languages:
 
-- 🇪🇸 **Español** (por defecto)
-- 🇬🇧 **Inglés**
+- 🇪🇸 **Spanish** (default)
+- 🇬🇧 **English**
 
-El idioma se selecciona automáticamente según la configuración del sistema. Los usuarios pueden cambiarlo manualmente en la pantalla de Configuración.
+Language is automatically selected based on system configuration. Users can manually change it in the Settings screen.
 
-### Archivos de Localización
+### Localization Files
 
-- `res/values/strings.xml` - Español (60 strings)
-- `res/values-en/strings.xml` - Inglés (60 strings)
-- `res/xml/locales_config.xml` - Configuración de locales
+- `res/values/strings.xml` - Spanish (60 strings)
+- `res/values-en/strings.xml` - English (60 strings)
+- `res/xml/locales_config.xml` - Locale configuration
 
-## 🎨 Temas
+## 🎨 Themes
 
 ### OLED Dark Theme
 
-HabitHub incluye un tema oscuro optimizado para pantallas OLED:
+HabitHub includes a dark theme optimized for OLED displays:
 
-- **Modo Claro**: Colores vibrantes con fondo blanco
-- **Modo Oscuro OLED**: Negro puro (#000000) para ahorro de batería
+- **Light Mode**: Vibrant colors with white background
+- **OLED Dark Mode**: Pure black (#000000) for battery savings
 
-Las preferencias de tema se guardan con DataStore y persisten entre sesiones.
+Theme preferences are saved with DataStore and persist between sessions.
 
-## 🐛 Solución de Problemas
+## 🐛 Troubleshooting
 
-### Error de compilación Gradle
+### Gradle Build Error
 
 ```bash
-# Limpiar y reconstruir
+# Clean and rebuild
 ./gradlew clean
 ./gradlew build --refresh-dependencies
 ```
 
-### Error de Hilt
+### Hilt Error
 
-Verifica que las anotaciones estén correctas:
+Verify that annotations are correct:
 
-- `@HiltAndroidApp` en `HabitHubApplication`
-- `@AndroidEntryPoint` en `MainActivity` y `SplashActivity`
-- `@HiltViewModel` en todos los ViewModels
-- `@Inject` en constructores de repositorios
+- `@HiltAndroidApp` in `HabitHubApplication`
+- `@AndroidEntryPoint` in `MainActivity` and `SplashActivity`
+- `@HiltViewModel` in all ViewModels
+- `@Inject` in repository constructors
 
-### Error de kapt
+### kapt Error
 
 ```bash
-# Invalidar cachés en Android Studio
+# Invalidate caches in Android Studio
 File > Invalidate Caches > Invalidate and Restart
 ```
 
-### Los gráficos no se muestran
+### Charts Not Displaying
 
-- Verifica que tengas datos en el rango de fechas seleccionado
-- Revisa que Vico Charts esté correctamente importado en `libs.versions.toml`
+- Verify that you have data in the selected date range
+- Check that Vico Charts is correctly imported in `libs.versions.toml`
 
-## � CI/CD y Workflows
+## 🔄 CI/CD and Workflows
 
 ### GitHub Actions
 
-El proyecto incluye workflows automatizados profesionales:
+The project includes professional automated workflows:
 
 #### 🔨 CI Pipeline (`android-ci.yml`)
-Se ejecuta en cada push y pull request:
-- ✅ Build del proyecto
-- ✅ Tests unitarios y de integración
-- ✅ Análisis de código con ktlint
+Runs on every push and pull request:
+- ✅ Project build
+- ✅ Unit and integration tests
+- ✅ Code analysis with ktlint
 - ✅ Android Lint
-- ✅ Tests instrumentados (en PRs)
-- ✅ Reporte de cobertura de tests
-- ✅ Generación de APK debug
+- ✅ Instrumented tests (on PRs)
+- ✅ Test coverage report
+- ✅ Debug APK generation
 
 #### 📦 Release Pipeline (`release.yml`)
-Se activa con tags `v*.*.*`:
-- 📦 Build de APK release
-- 🔐 Firmado de APK (si está configurado)
-- 📝 Generación automática de changelog
-- 🚀 Creación de GitHub Release
-- 📤 Subida de artifacts
+Triggered by tags `v*.*.*`:
+- 📦 Release APK build
+- 🔐 APK signing (if configured)
+- 📝 Automatic changelog generation
+- 🚀 GitHub Release creation
+- 📤 Artifact upload
 
 #### 🔍 Code Quality (`code-quality.yml`)
-Se ejecuta en pull requests:
-- 🔎 Análisis estático con Detekt
-- 📊 Análisis de complejidad de código
-- ☁️ Integración con SonarCloud (opcional)
-- 📈 Verificación de actualizaciones de dependencias
+Runs on pull requests:
+- 🔎 Static analysis with Detekt
+- 📊 Code complexity analysis
+- ☁️ SonarCloud integration (optional)
+- 📈 Dependency updates verification
 
 #### 🤖 Dependabot
-- 📦 Actualizaciones automáticas de Gradle
-- 🔄 Actualizaciones de GitHub Actions
-- ✅ Auto-merge de parches seguros
+- 📦 Automatic Gradle updates
+- 🔄 GitHub Actions updates
+- ✅ Auto-merge of safe patches
 
-### Calidad de Código
+### Code Quality
 
 ```bash
-# Verificar estilo de código
+# Check code style
 ./gradlew ktlintCheck
 
-# Auto-formatear código
+# Auto-format code
 ./gradlew ktlintFormat
 
-# Análisis estático
+# Static analysis
 ./gradlew detekt
 
 # Android Lint
 ./gradlew lint
 
-# Verificar actualizaciones de dependencias
+# Check dependency updates
 ./gradlew dependencyUpdates
 ```
 
-### Crear un Release
+### Creating a Release
 
 ```bash
-# 1. Asegúrate de estar en main y actualizado
+# 1. Ensure you are on main and up to date
 git checkout main
 git pull origin main
 
-# 2. Crea y empuja un tag
-git tag -a v1.0.0 -m "Release v1.0.0: Descripción de cambios"
+# 2. Create and push a tag
+git tag -a v1.0.0 -m "Release v1.0.0: Change description"
 git push origin v1.0.0
 
-# 3. GitHub Actions automáticamente:
-#    - Compila el APK release
-#    - Crea el GitHub Release
-#    - Genera el changelog
-#    - Sube el APK como artifact
+# 3. GitHub Actions automatically:
+#    - Builds the release APK
+#    - Creates the GitHub Release
+#    - Generates the changelog
+#    - Uploads the APK as artifact
 ```
 
 ## 🧪 Testing
 
-### Ejecutar Tests Localmente
+### Running Tests Locally
 
 ```bash
-# Tests unitarios
+# Unit tests
 ./gradlew test
 
-# Tests instrumentados (requiere emulador o dispositivo)
+# Instrumented tests (requires emulator or device)
 ./gradlew connectedAndroidTest
 
-# Todos los checks (tests + lint)
+# All checks (tests + lint)
 ./gradlew check
 
-# Con reporte de cobertura
+# With coverage report
 ./gradlew testDebugUnitTest jacocoTestReport
 ```
 
-### Cobertura de Tests
+### Test Coverage
 
-Los reportes se generan en:
-- Tests unitarios: `app/build/reports/tests/testDebugUnitTest/index.html`
+Reports are generated in:
+- Unit tests: `app/build/reports/tests/testDebugUnitTest/index.html`
 - Android Lint: `app/build/reports/lint-results.html`
 - Detekt: `build/reports/detekt/detekt.html`
-- Cobertura: `app/build/reports/jacoco/html/index.html`
+- Coverage: `app/build/reports/jacoco/html/index.html`
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-¡Las contribuciones son bienvenidas! Consulta [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles.
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
-### Proceso de Contribución
+### Contribution Process
 
-1. **Fork** el repositorio
-2. **Crea** una rama: `git checkout -b feature/AmazingFeature`
-3. **Commit** con Conventional Commits: `git commit -m 'feat: Add AmazingFeature'`
+1. **Fork** the repository
+2. **Create** a branch: `git checkout -b feature/AmazingFeature`
+3. **Commit** using Conventional Commits: `git commit -m 'feat: Add AmazingFeature'`
 4. **Push**: `git push origin feature/AmazingFeature`
-5. **Abre** un Pull Request
+5. **Open** a Pull Request
 
 ### Conventional Commits
 
-Seguimos [Conventional Commits](https://www.conventionalcommits.org/):
+We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-- `feat:` Nueva funcionalidad
-- `fix:` Corrección de bug
-- `docs:` Cambios en documentación
-- `style:` Formato, espacios (sin cambios de código)
-- `refactor:` Refactorización de código
-- `test:` Añadir o modificar tests
-- `chore:` Mantenimiento, dependencias
-- `ci:` Cambios en CI/CD
+- `feat:` New feature
+- `fix:` Bug fix
+- `docs:` Documentation changes
+- `style:` Formatting, whitespace (no code changes)
+- `refactor:` Code refactoring
+- `test:` Add or modify tests
+- `chore:` Maintenance, dependencies
+- `ci:` CI/CD changes
 
-**Ejemplo:**
+**Example:**
 ```
 feat(calendar): add swipe gesture to navigate months
 
@@ -407,117 +425,85 @@ feat(calendar): add swipe gesture to navigate months
 Closes #123
 ```
 
-## 📊 Estado del Proyecto
+## 📊 Project Status
 
-| Característica | Estado | Detalles |
-|----------------|--------|----------|
-| MVVM Architecture | ✅ **Completado** | 3 ViewModels con @HiltViewModel |
-| Hilt DI | ✅ **Completado** | Inyección de dependencias configurada |
-| Room Database | ✅ **Completado** | 3 entidades, 1 DAO, 3 repositorios |
-| Localization (ES/EN) | ✅ **Completado** | 60 strings en cada idioma |
-| OLED Dark Theme | ✅ **Completado** | Tema oscuro optimizado para OLED |
-| Material Design 3 | ✅ **Completado** | Material3 1.4.0-alpha03 |
-| CI/CD Pipeline | ✅ **Completado** | 4 workflows de GitHub Actions |
-| Code Quality Tools | ✅ **Completado** | ktlint, Detekt, Dependency Updates |
-| Splash Screen | ✅ **Completado** | SplashActivity con branding |
-| Navigation | ✅ **Completado** | Navigation Compose con 4 pantallas |
-| Unit Tests | 🚧 **Pendiente** | MockK configurado, tests por implementar |
-| Widget Home Screen | 🔜 **Futuro** | Planificado |
-| Cloud Sync | 🔜 **Futuro** | Planificado |
-| Notifications | 🔜 **Futuro** | Planificado |
+| Feature | Status | Details |
+|---------|--------|---------|
+| MVVM Architecture | ✅ **Complete** | 3 ViewModels with @HiltViewModel |
+| Hilt DI | ✅ **Complete** | Dependency injection configured |
+| Room Database | ✅ **Complete** | 3 entities, 1 DAO, 3 repositories |
+| Localization (ES/EN) | ✅ **Complete** | 60 strings in each language |
+| OLED Dark Theme | ✅ **Complete** | OLED-optimized dark theme |
+| Material Design 3 | ✅ **Complete** | Material3 1.4.0-alpha03 |
+| CI/CD Pipeline | ✅ **Complete** | 4 GitHub Actions workflows |
+| Code Quality Tools | ✅ **Complete** | ktlint, Detekt, Dependency Updates |
+| Splash Screen | ✅ **Complete** | SplashActivity with branding |
+| Navigation | ✅ **Complete** | Navigation Compose with 4 screens |
+| Unit Tests | 🚧 **Pending** | MockK configured, tests to implement |
+| Widget Home Screen | 🔜 **Future** | Planned |
+| Cloud Sync | 🔜 **Future** | Planned |
+| Notifications | 🔜 **Future** | Planned |
 
 ## 🎯 Roadmap
 
-### v1.1.0 (Próximo)
+### v1.1.0 (Next)
 
-- [ ] Tests unitarios para ViewModels (70%+ cobertura)
-- [ ] Tests de integración para Repositories
-- [ ] Tests UI para pantallas críticas
-- [ ] Documentación de arquitectura completa
+- [ ] Unit tests for ViewModels (70%+ coverage)
+- [ ] Integration tests for Repositories
+- [ ] UI tests for critical screens
+- [ ] Complete architecture documentation
 
-### v1.2.0 (Futuro)
+### v1.2.0 (Future)
 
-- [ ] Widget de inicio con objetivos del día
-- [ ] Notificaciones de recordatorio
-- [ ] Exportar/importar datos (JSON)
-- [ ] Racha de días consecutivos
+- [ ] Home widget with daily objectives
+- [ ] Reminder notifications
+- [ ] Export/import data (JSON)
+- [ ] Consecutive days streak
 
-### v2.0.0 (Largo plazo)
+### v2.0.0 (Long-term)
 
-- [ ] Sincronización en la nube (Firebase)
-- [ ] Categorías de objetivos
-- [ ] Estadísticas avanzadas
-- [ ] Modo tablet con diseño adaptativo
+- [ ] Cloud synchronization (Firebase)
+- [ ] Objective categories
+- [ ] Advanced statistics
+- [ ] Tablet mode with adaptive design
 - [ ] Wear OS companion app
 
-## 📄 Licencia
-```
+## 📄 License
 
-## �🔮 Futuras Mejoras
+This project is licensed under the [MIT License](LICENSE). This means you can:
 
-- [ ] Recordatorios y notificaciones
-- [ ] Widgets para la pantalla de inicio
-- [ ] Racha de días consecutivos
-- [ ] Exportar/importar datos
-- [ ] ✅ ~~Temas personalizados (modo oscuro OLED)~~ ✅ Completado
-- [ ] Categorías de hábitos
-- [ ] Objetivos semanales/mensuales
-- [ ] Sincronización en la nube
-- [ ] ✅ ~~CI/CD completo~~ ✅ Completado
-- [ ] Tests unitarios (70%+ cobertura)
+- ✅ Use the code freely in personal and commercial projects
+- ✅ Modify and adapt the code to your needs
+- ✅ Distribute the original or modified code
+- ✅ Use the code in private applications
 
-## � Estado del Proyecto
+The only condition is to maintain the copyright notice and license in copies of the software.
 
-| Característica | Estado |
-|----------------|--------|
-| MVVM Architecture | ✅ Implementado |
-| Hilt DI | ✅ Implementado |
-| Room Database | ✅ Implementado |
-| Localization (ES/EN) | ✅ Implementado |
-| OLED Dark Theme | ✅ Implementado |
-| Material Design 3 | ✅ Implementado |
-| CI/CD Pipeline | ✅ Implementado |
-| Code Quality Tools | ✅ Implementado |
-| Unit Tests | 🚧 En progreso |
-| Widget Home Screen | 🔜 Próximamente |
-| Cloud Sync | 🔜 Próximamente |
-
-##  Licencia
-
-Este proyecto está bajo la [Licencia MIT](LICENSE). Esto significa que puedes:
-
-- ✅ Usar el código libremente en proyectos personales y comerciales
-- ✅ Modificar y adaptar el código a tus necesidades
-- ✅ Distribuir el código original o modificado
-- ✅ Usar el código en aplicaciones privadas
-
-La única condición es mantener el aviso de copyright y la licencia en las copias del software.
-
-## 👨‍💻 Desarrollador
+## 👨‍💻 Developer
 
 **Dennis Ver**
 
 - GitHub: [@dennnisver4](https://github.com/dennnisver4)
-- Email: [contacto@realdavidbb@gmail.com](mailto:realdavidbb@gmail.com)
+- Email: [dennnisver4@gmail.com](mailto:dennnisver4@gmail.com)
 
-Desarrollado con ❤️ usando Android Studio y las últimas tecnologías de Android.
+Developed with ❤️ using Android Studio and the latest Android technologies.
 
-## 🙏 Agradecimientos
+## 🙏 Acknowledgements
 
-- [Jetpack Compose](https://developer.android.com/jetpack/compose) - UI moderna declarativa
-- [Hilt](https://dagger.dev/hilt/) - Inyección de dependencias
-- [Room](https://developer.android.com/training/data-storage/room) - Base de datos local
-- [Vico Charts](https://github.com/patrykandpatrick/vico) - Gráficas elegantes
-- [Material Design 3](https://m3.material.io/) - Sistema de diseño
-- [GitHub Actions](https://github.com/features/actions) - CI/CD automatizado
+- [Jetpack Compose](https://developer.android.com/jetpack/compose) - Modern declarative UI
+- [Hilt](https://dagger.dev/hilt/) - Dependency injection
+- [Room](https://developer.android.com/training/data-storage/room) - Local database
+- [Vico Charts](https://github.com/patrykandpatrick/vico) - Elegant charts
+- [Material Design 3](https://m3.material.io/) - Design system
+- [GitHub Actions](https://github.com/features/actions) - Automated CI/CD
 
 ---
 
 <div align="center">
 
-**⭐ Si te gusta HabitHub, dale una estrella ⭐**
+**⭐ If you like HabitHub, give it a star ⭐**
 
-**¡Empieza hoy mismo a construir mejores hábitos! 💪🎯**
+**Start building better habits today! 💪🎯**
 
 Made with ❤️ and ☕
 
