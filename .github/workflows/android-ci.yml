@@ -58,7 +58,7 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace
 
     - name: Upload Debug APK
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: debug-apk
         path: app/build/outputs/apk/debug/app-debug.apk
@@ -75,7 +75,7 @@ jobs:
         script: ./gradlew connectedCheck --stacktrace
 
     - name: Upload test results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       if: always()
       with:
         name: test-results
@@ -83,7 +83,7 @@ jobs:
         retention-days: 7
 
     - name: Upload coverage reports
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       if: always()
       with:
         name: coverage-reports
@@ -113,7 +113,7 @@ jobs:
       run: ./gradlew lint
 
     - name: Upload lint results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       if: always()
       with:
         name: lint-results
@@ -140,7 +140,7 @@ jobs:
           --enableRetired
 
     - name: Upload security report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       if: always()
       with:
         name: security-report
